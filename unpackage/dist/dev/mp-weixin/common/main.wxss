@@ -1,0 +1,48 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+._a{
+  text-decoration: none;
+}
+._ul ._li{
+  list-style: none;
+}
+page,._div,._dl,._dt,._dd,._ul,._ol,._li,._h1,._h2,._h3,._h4,._h5,._h6,._pre,form,._fieldset,input,textarea,._p,._blockquote,._th,._td {margin:0;padding:0;}
+._table {border-collapse:collapse;border-spacing:0;}
+page{
+  width : 100% ;
+  height : 100% ;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+}
+page{
+  width : 100% ;
+  height : 100% ;
+}
+._fieldset,._img {border:0}
+._ol,._ul {list-style:none}
+._caption,._th {text-align:left}
+._h1,._h2,._h3,._h4,._h5,._h6 {font-size:100%;font-weight:normal}
+._q:before,._q:after {content:''}
+._abbr,acronym { border:0}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

@@ -1,0 +1,354 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.netdetail-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.netdetail-box .scroll-y {
+    width: 100%;
+    height: 100%;
+    padding: 16rpx 20rpx 70rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    /*弹出层*/
+}
+.netdetail-box .scroll-y .address-box {
+      width: 710rpx;
+      height: 120rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-shadow: 2rpx 2rpx 2rpx 1rpx rgba(0, 0, 0, 0.16);
+              box-shadow: 2rpx 2rpx 2rpx 1rpx rgba(0, 0, 0, 0.16);
+}
+.netdetail-box .scroll-y .address-box .address {
+        width: 590rpx;
+        height: 100%;
+        background: #E0FFF7;
+        padding: 16rpx 0 13rpx 15rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.netdetail-box .scroll-y .address-box .address .address-name {
+          line-height: 47rpx;
+          font-size: 30rpx;
+          color: #111111;
+}
+.netdetail-box .scroll-y .address-box .address .address-pic {
+          line-height: 44rpx;
+          font-size: 26rpx;
+          color: #038577;
+}
+.netdetail-box .scroll-y .address-box .distance {
+        width: 120rpx;
+        height: 120rpx;
+        background: #038577;
+}
+.netdetail-box .scroll-y .give-dian-box {
+      width: 100%;
+      height: calc(100% - 120rpx);
+      padding-top: 15rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul {
+        width: 100%;
+        height: 100%;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li {
+          width: 100%;
+          height: 185rpx;
+          border-bottom: 2rpx solid #D8D8D8;
+          padding: 22rpx 0 7rpx 0;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .but {
+            width: 140rpx;
+            height: 60rpx;
+            background: #038577;
+            border-radius: 15rpx;
+            font-size: 30rpx;
+            font-weight: bold;
+            color: white;
+            line-height: 60rpx;
+            text-align: center;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .one ._span {
+              font-size: 26rpx;
+              font-family: SimHei;
+              color: #333333;
+              line-height: 54rpx;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .two {
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              margin-top: 18rpx;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .two .electricity-bar {
+                overflow: hiddem;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .two .electricity-bar ._i {
+                  float: left;
+                  width: 8rpx;
+                  height: 32rpx;
+                  background: #038577;
+                  border-radius: 4rpx;
+                  margin-right: 8rpx;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .two .show-electri-num {
+                font-size: 32rpx;
+                color: #038577;
+                line-height: 32rpx;
+                margin-left: 16rpx;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .three {
+              line-height: 53rpx;
+              font-size: 26rpx;
+              font-family: SimHei;
+              color: #999999;
+              width: 80%;
+              overflow: hidden;
+              -o-text-overflow: ellipsis;
+                 text-overflow: ellipsis;
+              white-space: nowrap;
+}
+.netdetail-box .scroll-y .uni-popup__wrapper.uni-custom .uni-popup__wrapper-box {
+      padding: 0;
+}
+.netdetail-box .scroll-y .piker-box {
+      width: 100%;
+      height: 482rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view {
+        width: 100%;
+        height: 482rpx;
+        padding: 14rpx 20rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .piker-tit {
+          width: 100%;
+          height: 106rpx;
+          border-bottom: 2rpx solid #D8D8D8;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .piker-tit .piker-name {
+            font-size: 36rpx;
+            font-family: SimHei;
+            font-weight: bold;
+            color: black;
+            line-height: 46px;
+            text-align: center;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu {
+          width: 100%;
+          height: 184rpx;
+          border-bottom: 2rpx solid #D8D8D8;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .one {
+            margin-top: 33rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .one ._span {
+              font-size: 26rpx;
+              font-family: SimHei;
+              color: #333333;
+              line-height: 54rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .two {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            margin-top: 18rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .two .electricity-bar {
+              overflow: hiddem;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .two .electricity-bar ._i {
+                float: left;
+                width: 8rpx;
+                height: 32rpx;
+                background: #038577;
+                border-radius: 4rpx;
+                margin-right: 8rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .two .show-electri-num {
+              font-size: 32rpx;
+              color: #038577;
+              line-height: 32rpx;
+              margin-left: 16rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .three {
+            line-height: 53rpx;
+            font-size: 26rpx;
+            font-family: SimHei;
+            color: #999999;
+            width: 80%;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
+            white-space: nowrap;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .word-content {
+          width: 100%;
+          height: 110rpx;
+          margin-top: 15rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .word-content .word-menu {
+            font-size: 26rpx;
+            font-family: SimHei;
+            color: #999999;
+            line-height: 36rpx;
+            width: 100%;
+            height: 100%;
+            -o-text-overflow: -o-ellipsis-lastline;
+               text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+}
+.netdetail-box .scroll-y .piker-box .piker-but {
+        width: 100%;
+        height: 96rpx;
+        background: #038577;
+        text-align: center;
+        font-size: 30rpx;
+        font-family: SimHei;
+        font-weight: bold;
+        color: white;
+        line-height: 96rpx;
+}
+.netdetail-box .scroll-y .uni-tip {
+      width: 540rpx;
+      height: 281rpx;
+      background: #f7f7f7;
+      border-radius: 15rpx;
+      padding-top: 37rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+}
+.netdetail-box .scroll-y .uni-tip .uni-tip-title {
+        font-size: 34rpx;
+        font-family: SimHei;
+        color: black;
+        text-align: center;
+        line-height: 64rpx;
+}
+.netdetail-box .scroll-y .uni-tip .uni-tip-content {
+        font-size: 26rpx;
+        font-family: SimHei;
+        color: black;
+        line-height: 56rpx;
+        margin-bottom: 35rpx;
+        text-align: center;
+}
+.netdetail-box .scroll-y .uni-tip .uni-tip-group-button {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        border-top: 2rpx solid #09141F;
+        position: absolute;
+        bottom: 0;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.netdetail-box .scroll-y .uni-tip .uni-tip-group-button .uni-tip-button {
+          width: 50%;
+          height: 88rpx;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          border-right: 2rpx solid #09141F;
+          font-size: 34rpx;
+          font-family: SimHei;
+          color: #007aff;
+          line-height: 88rpx;
+          text-align: center;
+}
+.netdetail-box .scroll-y .uni-tip .uni-tip-group-button .uni-tip-button:last-child {
+            border: 0;
+}
+.netdetail-box .scroll-y .uni-tip-two {
+      height: 291rpx;
+      width: 540rpx;
+      background: #f7f7f7;
+      border-radius: 15rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 0 38rpx;
+}
+.netdetail-box .scroll-y .uni-tip-two .uni-tip-title {
+        font-size: 34rpx;
+        font-family: SimHei;
+        font-weight: 400;
+        color: black;
+        line-height: 92rpx;
+}
+.netdetail-box .scroll-y .uni-tip-two .uni-tip-content {
+        font-size: 26rpx;
+        color: black;
+        line-height: 32rpx;
+        margin-top: 10rpx;
+}
+.netdetail-box .scroll-y .uni-tip-two .uni-tip-group-button {
+        width: calc(100% - 76rpx);
+        border: 0;
+        height: 88rpx;
+}
+.netdetail-box .scroll-y .uni-tip-two .uni-tip-group-button .uni-tip-button {
+          width: 100%;
+          height: 88rpx;
+}
+

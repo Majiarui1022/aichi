@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**scan.wxss**/
+.scan-view {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #B9BEC4;
+  position: fixed;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.scan-border {
+  width: 94%;
+  height: 94%;
+  border: 6rpx solid #08FDFE;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.scan-camera {
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 6rpx;
+  margin: 30rpx;
+}
+.cover-corner {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+}
+.cover-left-top {
+  left: 0;
+  top: 0;
+}
+.cover-right-top {
+  right: 0;
+  top: 0;
+}
+.cover-left-bottom {
+  left: 0;
+  bottom: 0;
+}
+.cover-right-bottom {
+  right: 0;
+  bottom: 0;
+}
+.scan-animation {
+  position: absolute;
+  top: -10rpx;
+  left: 10rpx;
+  width: 480rpx;
+  height: 8rpx;
+  background-color: #08FDFE;
+  border-radius: 50%;
+}
+
+

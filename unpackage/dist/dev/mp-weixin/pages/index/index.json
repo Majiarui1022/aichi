@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "爱驰",
+  "titleImage": "static/logo.png",
+  "usingComponents": {
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
+}
