@@ -269,6 +269,9 @@
         color: white;
         line-height: 96rpx;
 }
+.netdetail-box .scroll-y .piker-box .piker-but:active {
+          background: #049d8c;
+}
 .netdetail-box .scroll-y .uni-tip {
       width: 540rpx;
       height: 281rpx;

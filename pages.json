@@ -24,14 +24,57 @@
 			"style": {
 				"navigationBarTitleText": "网点详情"
 			}
+		},
+		{
+			"path": "pages/sendcode/sendcode",
+			"style": {
+				"navigationBarTitleText": "验证码"
+			}
+		},
+		{
+			"path" : "pages/usermiddle/usermiddle",
+			"style" : {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path" : "pages/userinfo/userinfo",
+			"style" : {
+				"navigationBarTitleText": "个人信息"
+			}
+		},
+		{
+			"path" : "pages/changename/changename",
+			"style" : {
+				"navigationBarTitleText": "昵称"
+			}
+		},
+		{
+			"path" : "pages/order/order",
+			"style" : {
+				"navigationBarTitleText": "订单"
+			}
+		},
+		{
+			"path" : "pages/changephone/changephone",
+			"style" : {
+				"navigationBarTitleText": "修改手机号"
+			}
+		},
+		{
+			"path" : "pages/searchaddress/searchaddress",
+			"style" : {
+				"navigationBarTitleText": "网点搜索"
+			}
 		}
+		
     ],
 	
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF",
 		"enablePullDownRefresh":false
 	}
 }

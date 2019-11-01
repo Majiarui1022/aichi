@@ -3,14 +3,21 @@
     "pages/index/index",
     "pages/home/home",
     "pages/aboutwe/aboutwe",
-    "pages/netdetails/netdetails"
+    "pages/netdetails/netdetails",
+    "pages/sendcode/sendcode",
+    "pages/usermiddle/usermiddle",
+    "pages/userinfo/userinfo",
+    "pages/changename/changename",
+    "pages/order/order",
+    "pages/changephone/changephone",
+    "pages/searchaddress/searchaddress"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF",
     "enablePullDownRefresh": false
   },
   "permission": {

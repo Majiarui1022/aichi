@@ -1,7 +1,7 @@
 <template>
 	<view class="map-box" id="test">
 		<!-- 搜索框 -->
-		<view class="search-box">搜索网点、地点名称</view>
+		<view class="search-box" @click="searchaddress">搜索网点、地点名称</view>
 		
 		<!-- 预约 -->
 		<view class="count-down-box">
@@ -12,7 +12,7 @@
 						<uni-countdown 
 						border-color="transparent"	
 						:show-day="false" 
-						:hour="false" 
+						:showHours="false"
 						:minute="minute" 
 						@timeup="timeup"
 						:second="sec">
@@ -21,7 +21,7 @@
 				</p>
 				<p class="row-two">预约编号：xxx500</p>
 			</view>
-			<view class="count-down-but">取消</view>
+			<view class="count-down-but" @click="quedingnle">取消</view>
 		</view>
 		
 		<!-- 扫码but -->
@@ -43,16 +43,34 @@
 		        </map>
 		    </view> 
 			
-			<text @click="clickgohome" class="back">返回</text>
+			<view @click="clickgoaddress" class="back"><image src="../../static/localtion.png" mode=""></image></view>
+			<view @click="showservice" class="back serviceicn"><image src="../../static/service.png" mode=""></image></view>
+			<view @click="clickgohome" class="back indexhomeicn"><image src="../../static/indexhome.png" mode=""></image></view>
 			<image src="../../static/me.png" class="isme" mode=""></image>
 		</view>
+		
+		
+		<!-- 提示框 -->
+		<uni-popup :show="show" :type="type" :custom="true" :mask-click="false">
+			<view class="uni-tip">
+				<view class="uni-tip-title">提醒</view>
+				<view class="uni-tip-content">您是否取消预约？</view>
+				<view class="uni-tip-group-button">
+					<view class="uni-tip-button" @click="cancel">是</view>
+					<view class="uni-tip-button" @click="cancel">否</view>
+				</view>
+			</view>
+		</uni-popup>
+		
+		</alert-word>
 	</view>
 </template>
 
 <script>
+	import uniPopup from "../../components/uni-popup/uni-popup.vue"
 	import uniCountdown from "@/components/uni-countdown/uni-countdown.vue"
 	export default {
-	  components: {uniCountdown},
+	  components: {uniCountdown,uniPopup},
 		data(){
 			return{
 				title: 'map',
@@ -66,8 +84,10 @@
 				}],
 				mapObj:{},
 				Mapheight:0,
-				minute:0,
-				sec:4
+				minute:1,
+				sec:4,
+				show: false,
+				type:'center',
 				
 			}
 		},
@@ -111,7 +131,7 @@
 			},
 			
 			//点击回到当前定位位置
-			clickgohome(){
+			clickgoaddress(){
 				uni.getLocation({
 				    type: 'gcj02', //返回可以用于uni.openLocation的经纬度
 				    success:  (res)=> {
@@ -127,18 +147,55 @@
 				
 			},
 			
+			//进入我的界面
+			clickgohome(){
+				uni.navigateTo({
+				    url: '../usermiddle/usermiddle'
+				});
+			},
+			
+			
+			//弹出客服框
+			showservice(){
+				
+			},
+			
 			//倒计时结束回调
 			timeup(){
 				console.log("结束了")
 			},
 			
+			//打开  已被预约提醒  + 暂未认证提醒
+			quedingnle(){
+				this.show = true
+				
+			},
+			//关闭  已被预约提醒  + 暂未认证提醒
+			cancel(){
+				this.show=false
+				
+				uni.showToast({
+				    title: '取消成功',
+					icon :'none',
+				    duration: 1500
+				});
+			},
 			
 			//点击进入扫一扫
 			gosao(){
 				uni.navigateTo({
 				    url: '../home/home'
 				});
+			},
+			
+			
+			//进入网点搜索
+			searchaddress(){
+				uni.navigateTo({
+				    url: '../searchaddress/searchaddress'
+				});
 			}
+		
 		},
 		mounted() {
 			uni.getLocation({
@@ -184,9 +241,9 @@
 			color:rgba(187,187,187,1);
 			line-height:72rpx;
 			text-indent:100rpx;
-			display: none;
 		}
 		.count-down-box{
+			display: none !important;
 			width: calc(100% - 20rpx);
 			height:100rpx;
 			background:rgba(255,255,255,1);
@@ -245,10 +302,28 @@
 			}
 		}
 		.back{
-			font-size:12rpx;
 			position: fixed;
-			right: 50rpx;
-			bottom: 50rpx;
+			right: 30rpx;
+			bottom:243rpx;
+			width:72rpx;
+			height:72rpx;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.2);
+			border-radius:2rpx;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			image{
+				width:44rpx;
+				height:45rpx;
+			}
+		}
+		.serviceicn{
+			bottom:343rpx;
+		}
+		.indexhomeicn{
+			right: 648rpx;
+			bottom: 243rpx;
 		}
 		.isme{
 			display: block;
@@ -259,6 +334,56 @@
 			left:50%;
 			margin-left: -10rpx;
 			margin-top: -44rpx;
+		}
+		
+		
+		// 提示框
+		.uni-tip{
+			width:540rpx;
+		    height:281rpx;
+			background:rgba(247,247,247,1);
+			border-radius: 15rpx;
+			padding-top: 37rpx;
+			box-sizing: border-box;
+			.uni-tip-title{
+				font-size:34rpx;
+				font-family:SimHei;
+				color:rgba(0,0,0,1);
+				text-align: center;
+				line-height: 64rpx;
+			}
+			.uni-tip-content{
+				font-size:26rpx;
+				font-family:SimHei;
+				color:rgba(0,0,0,1);
+				line-height: 56rpx;
+				margin-bottom: 35rpx;
+				text-align: center;
+			}
+			.uni-tip-group-button{
+				width: 100%;
+				display: flex;
+				border-top: 2rpx solid #09141F;
+				position: absolute;
+				bottom: 0;
+				box-sizing: border-box;
+				.uni-tip-button{
+					width: 50%;
+					height: 88rpx;
+					box-sizing: border-box;
+					border-right: 2rpx solid #09141F;
+					font-size:34rpx;
+					font-family:SimHei;
+					color:#007AFF;
+					line-height:88rpx;
+					text-align: center;
+					&:last-child{
+						border: 0;
+						color:#FF002A;
+					}
+				}
+				
+			}
 		}
 	}
 </style>

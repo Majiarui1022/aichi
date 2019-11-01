@@ -2,8 +2,8 @@
 	<view class="uni-countdown">
 		<view v-if="showDay" class="uni-countdown__number" :style="{borderColor:borderColor, color:color, background:backgroundColor}">{{d}}</view>
 		<view v-if="showDay" class="uni-countdown__splitor" :style="{color:splitorColor}">天</view>
-		<view class="uni-countdown__number" :style="{borderColor:borderColor, color:color, background:backgroundColor}">{{h}}</view>
-		<view class="uni-countdown__splitor" :style="{color:splitorColor}">{{showColon ? ':' : '时'}}</view>
+		<view v-if="showHours" class="uni-countdown__number" :style="{borderColor:borderColor, color:color, background:backgroundColor}">{{h}}</view>
+		<view v-if="showHours" class="uni-countdown__splitor" :style="{color:splitorColor}">{{showColon ? ':' : '时'}}</view>
 		<view class="uni-countdown__number" :style="{borderColor:borderColor, color:color, background:backgroundColor}">{{i}}</view>
 		<view class="uni-countdown__splitor" :style="{color:splitorColor}">{{showColon ? ':' : '分'}}</view>
 		<view class="uni-countdown__number" :style="{borderColor:borderColor, color:color, background:backgroundColor}">{{s}}</view>
@@ -15,6 +15,10 @@
 		name: "uni-countdown",
 		props: {
 			showDay: {
+				type: Boolean,
+				default: true
+			},
+			showHours:{
 				type: Boolean,
 				default: true
 			},
@@ -121,10 +125,9 @@
 	}
 </script>
 <style lang="scss">
-	$countdown-height:44upx;
+	$countdown-height:30rpx;
 
-	.uni-countdown {
-		padding: 2upx 0;
+	.uni-countdown { 
 		display: inline-flex;
 		flex-wrap: nowrap;
 		justify-content: center;
@@ -141,11 +144,9 @@
 			justify-content: center;
 			height: $countdown-height;
 			border-radius: $uni-border-radius-base;
-			margin: 0 5upx;
 			font-size: $uni-font-size-base;
 			border: 1px solid #000000;
 			font-size: $uni-font-size-sm;
-			padding: 0 10upx;
 		}
 	}
 </style>
