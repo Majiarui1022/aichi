@@ -1,0 +1,1 @@
+<view class="select-login-box"><view class="select-login-pad"><view class="login-logo-image"><image src="../../static/mylogo.png" mode></image></view><view class="login-but">微信登录</view><view class="login-phone-register">手机号码注册/登录</view><view class="clear-login">取消登录</view></view></view>

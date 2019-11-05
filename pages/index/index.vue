@@ -1,7 +1,10 @@
 <template>
 	<view class="map-box" id="test">
 		<!-- 搜索框 -->
-		<view class="search-box" @click="searchaddress">搜索网点、地点名称</view>
+		<view class="search-box" @click="searchaddress">
+			<image src="../../static/search.png" mode=""></image>
+			搜索网点、地点名称
+		</view>
 		
 		<!-- 预约 -->
 		<view class="count-down-box">
@@ -25,8 +28,14 @@
 		</view>
 		
 		<!-- 扫码but -->
-		<view class="but" @click="gosao">
-			<p class="nopro">附近暂无可用充电柜</p>
+		<view class="but">
+			<view class="dian-wu">
+				<p class="nopro">附近暂无可用充电柜</p>
+			</view>
+			<view class="give-dian"  @click="gosao">
+				<image class="code-image" src="../../static/code.png" mode=""></image>
+				<text>扫码取电</text>
+			</view>
 		</view>
 		<view class="page-body">
 		    <view class="page-section page-section-gap">
@@ -62,7 +71,18 @@
 			</view>
 		</uni-popup>
 		
-		</alert-word>
+		
+		<!-- 提示框 -->
+		<uni-popup :show="callphone" :type="type" :custom="true" :mask-click="false">
+			<view class="uni-tip callphone">
+				<view class="callphone-tit">拨打电话</view>
+				<view class="callphone-content">确认要拨打电话{{usermoblie}}吗？</view>
+				<view class="callphone-but-box">
+					<view class="callphone-left-but" @click="callmeoblie">呼叫</view>
+					<view class="callphone-right-but" @click="callphone = false">取消</view>
+				</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
@@ -88,6 +108,8 @@
 				sec:4,
 				show: false,
 				type:'center',
+				callphone:false,
+				usermoblie:'15000000000'
 				
 			}
 		},
@@ -157,7 +179,16 @@
 			
 			//弹出客服框
 			showservice(){
-				
+				this.callphone = true
+			},
+			
+			
+			//拨打电话
+			callmeoblie(){
+				var moblie = this.usermoblie
+				wx.makePhoneCall({
+				  phoneNumber: moblie,
+				})
 			},
 			
 			//倒计时结束回调
@@ -238,9 +269,19 @@
 			z-index: 999;
 			font-size:26rpx;
 			font-family:SimHei;
+			padding-left: 16rpx;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
 			color:rgba(187,187,187,1);
-			line-height:72rpx;
-			text-indent:100rpx;
+			image{
+				width:33rpx;
+				height:33rpx;
+				margin-right: 16rpx;
+			}
+			text{
+				line-height:72rpx;
+			}
 		}
 		.count-down-box{
 			display: none !important;
@@ -288,17 +329,43 @@
 		.but{
 			width:400rpx;
 			height:100rpx;
-			background:rgba(100,100,100,1);
 			border-radius:16rpx;
 			position: absolute;
 			left:calc(50% - 200rpx);
 			bottom: 60rpx;
 			z-index: 999;
-			.nopro{
-				font-size:28rpx;
-				color:rgba(255,255,255,1);
-				line-height:100rpx;
-				text-align: center;
+			.dian-wu{
+				border-radius:16rpx;
+				width: 100%;
+				height: 100%;
+				display: none;
+				background:rgba(100,100,100,1);
+				.nopro{
+					font-size:28rpx;
+					color:rgba(255,255,255,1);
+					line-height:100rpx;
+					text-align: center;
+				}
+			}
+			.give-dian{
+				border-radius:16rpx;
+				width: 100%;
+				height: 100%;
+				background: #038577;
+				padding: 18rpx 0 18rpx 80rpx;
+				box-sizing: border-box;
+				display: flex;
+				align-content: center;
+				.code-image{
+					width:62rpx;
+					height:64rpx;
+					margin-right: 30rpx;
+				}
+				text{
+					font-size:36rpx;
+					font-weight:bold;
+					color:rgba(255,255,255,1);
+				}
 			}
 		}
 		.back{
@@ -385,5 +452,54 @@
 				
 			}
 		}
+	
+		//拨打客服电话
+		.callphone{
+			width:559rpx;
+			height:269rpx;
+			background:rgba(255,255,255,1);
+			padding: 0 50rpx 36rpx 50rpx;
+			box-sizing: border-box;
+			.callphone-tit{
+				font-size:32rpx;
+				font-family:SimHei;
+				color:rgba(51,51,51,1);
+				line-height:114rpx;
+				text-align: center;
+				text-align: center;
+			}
+			.callphone-content{
+				font-size:24rpx;
+				font-family:FZLanTingHeiS-R-GB;
+				color:rgba(102,102,102,1);
+				line-height:24rpx;
+				margin-bottom: 38rpx;
+				text-align: center;
+			}
+			.callphone-but-box{
+				width: 100%;
+				height: 58rpx;
+				display: flex;
+				justify-content: space-between;
+				view{
+					font-size:28rpx;
+					font-family:SimHei;
+					color:rgba(255,255,255,1);
+					line-height:58rpx;
+					text-align: center;
+				}
+				.callphone-left-but{
+					width:180rpx;
+					height:58rpx;
+					background:rgba(3,133,119,1);
+				}
+				.callphone-right-but{
+					width:180rpx;
+					height:58rpx;
+					background:#999999;
+				}
+			}
+		}
+	
 	}
 </style>

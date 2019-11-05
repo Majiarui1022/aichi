@@ -10,7 +10,11 @@
     "pages/changename/changename",
     "pages/order/order",
     "pages/changephone/changephone",
-    "pages/searchaddress/searchaddress"
+    "pages/searchaddress/searchaddress",
+    "pages/successappointment/successappointment",
+    "pages/selectlogin/selectlogin",
+    "pages/login/login",
+    "pages/taskdian/taskdian"
   ],
   "subPackages": [],
   "window": {

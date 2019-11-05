@@ -26,6 +26,7 @@
 /* 文章场景相关 */
 .order-box {
   width: 100%;
+  height: 100%;
   background: #F9F9F9;
 }
 .order-box .order-content {
@@ -141,5 +142,27 @@
               -o-text-overflow: ellipsis;
                  text-overflow: ellipsis;
               white-space: nowrap;
+}
+.order-box .order-no {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.order-box .order-no image {
+      width: 426rpx;
+      height: 364rpx;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -213rpx;
+      margin-left: -182rpx;
+}
+.order-box .order-no text {
+      font-size: 36rpx;
+      font-family: SimHei;
+      color: #038577;
+      position: absolute;
+      top: 788rpx;
+      left: 168px;
 }
 

@@ -1,6 +1,7 @@
 <template>
 	<view class="order-box">
-		<view class="order-content">
+		<!-- 订单 -->
+		<view class="order-content" v-if="orderlist.length > 0">
 			<ul>
 				<li>
 					<view class="order-list-content">
@@ -126,6 +127,14 @@
 			</ul>
 			<uni-load-more :status="loadingStatus" :content-text='loadingWord'></uni-load-more>
 		</view>
+	
+		<!-- 暂无订单 --> 
+		<view class="order-no" v-else>
+			<image src="../../static/ch.png" mode=""></image>
+			<text>暂无订单</text>
+		</view>
+	
+	
 	</view>
 	
 </template>
@@ -142,7 +151,7 @@
 					contentrefresh: "正在加载...",
 					contentnomore: "没有更多数据了",
 				},
-				
+				orderlist:[]
 			}
 		},
 		onReachBottom() {
@@ -161,6 +170,7 @@
 <style lang="scss">
 	.order-box{
 		width: 100%;
+		height: 100%;
 		background: #F9F9F9;
 		.order-content{
 			width: 100%;
@@ -254,6 +264,30 @@
 						}
 					}
 				}
+			}
+		}
+		
+		.order-no{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			image{
+				width:426rpx;
+				height:364rpx;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -213rpx;
+				margin-left: -182rpx;
+			}
+			text{
+				font-size:36rpx;
+				font-family:SimHei;
+				color:rgba(3,133,119,1);
+				position: absolute;
+				top: 788rpx;
+				left: 168px;
+
 			}
 		}
 	}

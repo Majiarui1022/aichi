@@ -38,11 +38,18 @@
           box-sizing: border-box;
 }
 .scan-border .codetit {
-    font-size: 24rpx;
+    font-size: 34rpx;
     color: white;
     text-align: center;
-    margin-top: 34rpx;
+    margin-top: 51rpx;
     margin-bottom: 100rpx;
+}
+.scan-border .codetit image {
+      width: 44rpx;
+      height: 80rpx;
+      margin-right: 20rpx;
+      display: block;
+      margin: 0 auto;
 }
 .scan-camera {
   width: 480rpx;
@@ -52,8 +59,8 @@
   position: relative;
 }
 .cover-corner {
-  width: 80rpx;
-  height: 80rpx;
+  width: 40rpx;
+  height: 40rpx;
   position: absolute;
 }
 .cover-left-top {
@@ -74,11 +81,11 @@
 }
 .scan-animation {
   position: absolute;
-  top: -10rpx;
+  top: 10rpx;
   left: 10rpx;
   width: 460rpx;
   height: 8rpx;
-  background-color: #08FDFE;
+  background-color: #038577;
   border-radius: 50%;
 }
 

@@ -69,6 +69,23 @@
         width: 120rpx;
         height: 120rpx;
         background: #038577;
+        padding-top: 29rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.netdetail-box .scroll-y .address-box .distance image {
+          display: block;
+          width: 36rpx;
+          height: 36rpx;
+          margin: 0 auto;
+}
+.netdetail-box .scroll-y .address-box .distance text {
+          font-size: 26rpx;
+          font-family: SimHei;
+          color: white;
+          line-height: 54rpx;
+          display: block;
+          text-align: center;
 }
 .netdetail-box .scroll-y .give-dian-box {
       width: 100%;
@@ -120,11 +137,33 @@
                 -ms-flex: 1;
                     flex: 1;
 }
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .one {
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              height: 54rpx;
+              -webkit-box-align: center;
+              -webkit-align-items: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .one .car {
+                width: 115rpx;
+                height: 41rpx;
+                margin-right: 18rpx;
+}
+.netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .one .bike {
+                width: 66rpx;
+                height: 53rpx;
+                margin-left: 15rpx;
+                margin-right: 44rpx;
+}
 .netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .one ._span {
-              font-size: 26rpx;
-              font-family: SimHei;
-              color: #333333;
-              line-height: 54rpx;
+                font-size: 26rpx;
+                font-family: SimHei;
+                color: #333333;
+                line-height: 54rpx;
 }
 .netdetail-box .scroll-y .give-dian-box ._ul ._li .menu .two {
               display: -webkit-box;
@@ -195,12 +234,32 @@
 }
 .netdetail-box .scroll-y .piker-box .piker-view .menu .one {
             margin-top: 33rpx;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            height: 54rpx;
 }
 .netdetail-box .scroll-y .piker-box .piker-view .menu .one ._span {
               font-size: 26rpx;
               font-family: SimHei;
               color: #333333;
               line-height: 54rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .one .car {
+              width: 115rpx;
+              height: 41rpx;
+              margin-right: 18rpx;
+}
+.netdetail-box .scroll-y .piker-box .piker-view .menu .one .bike {
+              width: 66rpx;
+              height: 53rpx;
+              margin-left: 15rpx;
+              margin-right: 44rpx;
 }
 .netdetail-box .scroll-y .piker-box .piker-view .menu .two {
             display: -webkit-box;

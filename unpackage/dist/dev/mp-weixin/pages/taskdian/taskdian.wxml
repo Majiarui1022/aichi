@@ -1,0 +1,1 @@
+<view class="taskdian-box"><view class="task-padding-box"><view class="task-content"><image class="mylogo" src="../../static/mylogo.png"></image><view class="task-but-box"><view class="task-dian taskor">取电</view><view class="no-task taskor">暂不取电</view></view></view></view></view>

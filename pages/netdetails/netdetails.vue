@@ -7,14 +7,17 @@
 					<p class="address-name">祥科路炬芯研发大厦B1停车场</p>
 					<p class="address-pic">祥科路炬芯研发大厦B1停车场</p>
 				</view>
-				<view class="distance"></view>
+				<view class="distance">
+					<image src="../../static/maplogo.png" mode=""></image>
+					<text>120.1Km</text>
+				</view>
 			</view>
 			<!-- 网点充电桩 -->
 			<view class="give-dian-box">
 				<ul>
 					<li>
 						<view class="menu">
-							<view class="one"><span>未充电</span></view>
+							<view class="one"><image class="car" src="../../static/car.png" mode=""></image><span>未充电</span></view>
 							<view class="two">
 								<view class="electricity-bar">
 									<block v-for="(item,index) in listnum" :key="index">
@@ -31,7 +34,7 @@
 					</li>
 					<li>
 						<view class="menu">
-							<view class="one"><span>未充电</span></view>
+							<view class="one"><image class="bike" src="../../static/bike.png" mode=""></image><span>未充电</span></view>
 							<view class="two">
 								<view class="electricity-bar">
 									<block v-for="(item,index) in listnum" :key="index">
@@ -46,449 +49,6 @@
 						</view>
 						<view class="but" @click="openPopup">预约</view>
 					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
-					
 				</ul>
 			</view>
 			
@@ -501,7 +61,10 @@
 					</view>
 					<!-- 电池信息 -->
 					<view class="menu">
-						<view class="one"><span>未充电</span></view>
+						<view class="one">
+							<image src="../../static/car.png" class="car" mode=""></image>
+							<span>未充电</span>
+						</view>
 						<view class="two">
 							<view class="electricity-bar">
 								<block v-for="(item,index) in listnum" :key="index">
@@ -578,6 +141,9 @@
 			//打开  已被预约提醒  + 暂未认证提醒
 			quedingnle(){
 				this.authentication = true
+				uni.navigateTo({
+				    url: '../successappointment/successappointment'
+				});
 			},
 			//关闭  已被预约提醒  + 暂未认证提醒
 			cancel(){
@@ -623,6 +189,22 @@
 					width: 120rpx;
 					height: 120rpx;
 					background: #038577;
+					padding-top: 29rpx;
+					box-sizing: border-box;
+					image{
+						display: block;
+						width:36rpx;
+						height:36rpx;
+						margin: 0 auto;
+					}
+					text{;
+						font-size:26rpx;
+						font-family:SimHei;
+						color:rgba(255,255,255,1);
+						line-height:54rpx;
+						display: block;
+						text-align: center;
+					}
 				}
 			}
 			.give-dian-box{
@@ -658,6 +240,20 @@
 						.menu{
 							flex:1;
 							.one{
+								display: flex;
+								height: 54rpx;
+								align-items: center;
+								.car{
+									width:115rpx;
+									height:41rpx;
+									margin-right: 18rpx;
+								}
+								.bike{
+									width:66rpx;
+									height:53rpx;
+									margin-left:15rpx;
+									margin-right: 44rpx;
+								}
 								span{
 									font-size:26rpx;
 									font-family:SimHei;
@@ -731,11 +327,25 @@
 						border-bottom: 2rpx solid #D8D8D8;
 						.one{
 							margin-top:33rpx;
+							display: flex;
+							align-items: center;
+							height:54rpx;
 							span{
 								font-size:26rpx;
 								font-family:SimHei;
 								color:rgba(51,51,51,1);
 								line-height:54rpx;
+							}
+							.car{
+								width:115rpx;
+								height:41rpx;
+								margin-right: 18rpx;
+							}
+							.bike{
+								width:66rpx;
+								height:53rpx;
+								margin-left:15rpx;
+								margin-right: 44rpx;
 							}
 						}
 						.two{

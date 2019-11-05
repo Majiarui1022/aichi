@@ -3,6 +3,7 @@
 		<!-- 顶部搜索 -->
 		<view class="address-search-tit">
 			<view class="search-box-tit">
+			<image src="../../static/search.png" mode="" class="search-but"></image>
 			   <input 
 			   class="uni-input" 
 			   adjust-position="false" 
@@ -123,8 +124,17 @@
 				background:rgba(255,255,255,1);
 				box-shadow:0px 2rpx 2rpx 0px rgba(0, 0, 0, 0.15);
 				border-radius:20rpx;
+				padding-left: 16rpx;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				.search-but{
+					width:33rpx;
+					height:33rpx;
+					margin-right: 16rpx;
+				}
 				input{
-					width:100%;
+					width:calc(100% - 65rpx);
 					height:100%;
 					display: block;
 					border: 0;
@@ -133,8 +143,6 @@
 					font-size:26rpx;
 					font-family:SimHei;
 					line-height:72rpx;
-					padding-left: 100rpx;
-					box-sizing: border-box;
 					color:#000;
 					&:-ms-input-placeholder{
 						color:rgba(187,187,187,1);

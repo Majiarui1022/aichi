@@ -3,15 +3,15 @@
 	    <view class='scan-border'>
 	      
 	      <camera class='scan-camera' :flash="swichflash" mode="scanCode" binderror="cameraError" @scancode="aaaaa" bindscancode='scancode' frame-size='large'>
-	        <cover-image class='cover-corner cover-left-top' src='/images/left-top.png'></cover-image>
-	        <cover-image class='cover-corner cover-right-top' src='/images/right-top.png'></cover-image>
-	        <cover-image class='cover-corner cover-left-bottom' src='/images/left-bottom.png'></cover-image>
-	        <cover-image class='cover-corner cover-right-bottom' src='/images/right-bottom.png'></cover-image>
-	        
+	        <cover-image class='cover-corner cover-left-top' src='../../static/left-top.png'></cover-image>
+	        <cover-image class='cover-corner cover-right-top' src='../../static/right-top.png'></cover-image>
+	        <cover-image class='cover-corner cover-left-bottom' src='../../static/left-bottom.png'></cover-image>
+	        <cover-image class='cover-corner cover-right-bottom' src='../../static/right-bottom.png'></cover-image>
+	        <image src="" mode=""></image>
 	        <cover-view class='scan-animation' :animation="animation"></cover-view>
 	      </camera>
 		  <p class="codetit">请将二维码放入框内</p>
-		  <p class="codetit" @click="openflash">{{swichflash === "off"?'打开手电筒':'关闭手电筒'}}</p>
+		 <!-- <p class="codetit" @click="openflash"><image src="../../static/flashlight.png"></image>{{swichflash === "off"?'打开手电筒':'关闭手电筒'}}</p> -->
 	    </view>
 	  </view>
 </template>
@@ -86,11 +86,18 @@
 	  padding-top:160rpx;
 	  box-sizing: border-box;
 	  .codetit{
-		  font-size:24rpx;
+		  font-size:34rpx;
 		  color:rgba(255,255,255,1);
 		  text-align: center;  
-		  margin-top: 34rpx;
+		  margin-top: 51rpx;
 		  margin-bottom: 100rpx;
+		  image{
+			width:44rpx;
+			height:80rpx;
+			margin-right: 20rpx;
+			display: block;
+			margin: 0 auto;
+		  }
 	  }
 	}
 	
@@ -104,8 +111,8 @@
 	}
 	
 	.cover-corner {
-	  width: 80rpx;
-	  height: 80rpx;
+	  width: 40rpx;
+	  height: 40rpx;
 	  position: absolute;
 	}
 	
@@ -131,11 +138,11 @@
 	
 	.scan-animation {
 	  position: absolute;
-	  top: -10rpx;
+	  top: 10rpx;
 	  left: 10rpx;
 	  width: 460rpx;
 	  height: 8rpx;
-	  background-color: #08FDFE;
+	  background-color: #038577;
 	  border-radius: 50%;
 	}
 

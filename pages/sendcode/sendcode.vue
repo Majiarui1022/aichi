@@ -39,7 +39,7 @@
 		data() {
 			return {
 				aaaaa:'',
-				showcode:0,
+				showcode:1,
 				numbertime:59,
 				time:null,
 				type:'center',
@@ -48,7 +48,7 @@
 		},
 		methods: {
 			asdasd(){
-				console.log(12313)
+				console.log('我失焦了')
 			},
 			
 			//获取验证码
@@ -71,6 +71,9 @@
 				this.authentication = false
 			}
 		},
+		mounted() {
+			this.getcode()
+		},
 		destroyed() {
 			if(this.time){
 				clearInterval(this.time)
@@ -78,7 +81,7 @@
 		},
 		watch:{
 			aaaaa(news,olds){
-				console.log(news)
+				console.log(news.length)
 			}
 		}
 	}

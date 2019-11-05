@@ -43,9 +43,26 @@
     z-index: 999;
     font-size: 26rpx;
     font-family: SimHei;
+    padding-left: 16rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: #bbbbbb;
-    line-height: 72rpx;
-    text-indent: 100rpx;
+}
+.map-box .search-box image {
+      width: 33rpx;
+      height: 33rpx;
+      margin-right: 16rpx;
+}
+.map-box .search-box text {
+      line-height: 72rpx;
 }
 .map-box .count-down-box {
     display: none !important;
@@ -102,18 +119,50 @@
 .map-box .but {
     width: 400rpx;
     height: 100rpx;
-    background: #646464;
     border-radius: 16rpx;
     position: absolute;
     left: calc(50% - 200rpx);
     bottom: 60rpx;
     z-index: 999;
 }
-.map-box .but .nopro {
-      font-size: 28rpx;
-      color: white;
-      line-height: 100rpx;
-      text-align: center;
+.map-box .but .dian-wu {
+      border-radius: 16rpx;
+      width: 100%;
+      height: 100%;
+      display: none;
+      background: #646464;
+}
+.map-box .but .dian-wu .nopro {
+        font-size: 28rpx;
+        color: white;
+        line-height: 100rpx;
+        text-align: center;
+}
+.map-box .but .give-dian {
+      border-radius: 16rpx;
+      width: 100%;
+      height: 100%;
+      background: #038577;
+      padding: 18rpx 0 18rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+              align-content: center;
+}
+.map-box .but .give-dian .code-image {
+        width: 62rpx;
+        height: 64rpx;
+        margin-right: 30rpx;
+}
+.map-box .but .give-dian text {
+        font-size: 36rpx;
+        font-weight: bold;
+        color: white;
 }
 .map-box .back {
     position: fixed;
@@ -210,5 +259,58 @@
 .map-box .uni-tip .uni-tip-group-button .uni-tip-button:last-child {
           border: 0;
           color: #FF002A;
+}
+.map-box .callphone {
+    width: 559rpx;
+    height: 269rpx;
+    background: white;
+    padding: 0 50rpx 36rpx 50rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.map-box .callphone .callphone-tit {
+      font-size: 32rpx;
+      font-family: SimHei;
+      color: #333333;
+      line-height: 114rpx;
+      text-align: center;
+      text-align: center;
+}
+.map-box .callphone .callphone-content {
+      font-size: 24rpx;
+      font-family: FZLanTingHeiS-R-GB;
+      color: #666666;
+      line-height: 24rpx;
+      margin-bottom: 38rpx;
+      text-align: center;
+}
+.map-box .callphone .callphone-but-box {
+      width: 100%;
+      height: 58rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.map-box .callphone .callphone-but-box view {
+        font-size: 28rpx;
+        font-family: SimHei;
+        color: white;
+        line-height: 58rpx;
+        text-align: center;
+}
+.map-box .callphone .callphone-but-box .callphone-left-but {
+        width: 180rpx;
+        height: 58rpx;
+        background: #038577;
+}
+.map-box .callphone .callphone-but-box .callphone-right-but {
+        width: 180rpx;
+        height: 58rpx;
+        background: #999999;
 }
 

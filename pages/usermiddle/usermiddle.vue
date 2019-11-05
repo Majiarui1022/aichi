@@ -21,7 +21,7 @@
 						<text class="user-list-name">我的订单</text>
 					</view>
 				</li>
-				<li>
+				<li @click="goaboutwe">
 					<view>
 						<text class="user-list-name">关于我们</text>
 					</view>
@@ -42,14 +42,22 @@
 			}
 		},
 		methods: {
+			//个人信息
 			gouserinfo(){
 				uni.navigateTo({
 				    url: '../userinfo/userinfo'
 				});
 			},
+			//订单
 			gomyorder(){
 				uni.navigateTo({
 				    url: '../order/order'
+				});
+			},
+			//关于我们
+			goaboutwe(){
+				uni.navigateTo({
+				    url: '../aboutwe/aboutwe'
 				});
 			}
 		}
