@@ -2,7 +2,7 @@
 	  <view class="scan-view">
 	    <view class='scan-border'>
 	      
-	      <camera class='scan-camera' :flash="swichflash" mode="scanCode" binderror="cameraError" @scancode="aaaaa" bindscancode='scancode' frame-size='large'>
+	      <!-- <camera class='scan-camera' :flash="swichflash" mode="scanCode" binderror="cameraError" @scancode="aaaaa" bindscancode='scancode' frame-size='large'>
 	        <cover-image class='cover-corner cover-left-top' src='../../static/left-top.png'></cover-image>
 	        <cover-image class='cover-corner cover-right-top' src='../../static/right-top.png'></cover-image>
 	        <cover-image class='cover-corner cover-left-bottom' src='../../static/left-bottom.png'></cover-image>
@@ -10,7 +10,7 @@
 	        <image src="" mode=""></image>
 	        <cover-view class='scan-animation' :animation="animation"></cover-view>
 	      </camera>
-		  <p class="codetit">请将二维码放入框内</p>
+		  <p class="codetit">请将二维码放入框内</p> -->
 		 <!-- <p class="codetit" @click="openflash"><image src="../../static/flashlight.png"></image>{{swichflash === "off"?'打开手电筒':'关闭手电筒'}}</p> -->
 	    </view>
 	  </view>
@@ -27,22 +27,25 @@
 		},
 		methods:{
 			 donghua(){
-			 let animation = wx.createAnimation({});
-			    var that = this;
-				// 控制向上还是向下移动
-			    let m = true
+			 // let animation = wx.createAnimation({});
+			 //    var that = this;
+				// // 控制向上还是向下移动
+			 //    let m = true
 				
-			    setInterval(function () {
-			      if (m) {
-			        animation.translateY(240).step({ duration: 3000 })
-			        m = !m;
-			      } else {
-			        animation.translateY(10).step({ duration: 3000 })
-			        m = !m;
+			 //    setInterval(function () {
+			 //      if (m) {
+			 //        animation.translateY(240).step({ duration: 3000 })
+			 //        m = !m;
+			 //      } else {
+			 //        animation.translateY(10).step({ duration: 3000 })
+			 //        m = !m;
 					
-			      }
-			        this.animation = animation.export()
-			    }.bind(this), 3000)
+			 //      }
+			 //        this.animation = animation.export()
+			 //    }.bind(this), 3000)
+			 
+			 
+				
 			  },
 			  scancode(e){
 				  console.log('打印1')

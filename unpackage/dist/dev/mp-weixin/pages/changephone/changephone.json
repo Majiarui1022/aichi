@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "修改手机号",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
 }

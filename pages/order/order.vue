@@ -3,129 +3,29 @@
 		<!-- 订单 -->
 		<view class="order-content" v-if="orderlist.length > 0">
 			<ul>
-				<li>
+				<li  v-for = "(item,index) in orderlist" :key="index">
 					<view class="order-list-content">
 						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">预约成功</text></view>
+							<text class="order-name">{{item.number}}</text>
+							<view class="order-status-box">
+								<text class="order-status">{{item.status}}</text>
+								<image v-if="item.is_delete" @click="removeorder(item.id,index)" src="../../static/delete.png" mode=""></image>
+							</view>
 						</view>
 						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
+							<view class="order-menu-name">{{item.battery_pack[0]}}电池</view>
+							<view class="order-menu-number">电池组编号：{{item.battery_pack[1]}}</view>
 						</view>
 						<!-- 预约电池时间地点 -->
 						<view class="order-timer-address">
-							<view class="order-time order-new">预约时间：2019-09-17 09:19</view>
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
-						</view>
-					</view>
-				</li>
-				<li>
-					<view class="order-list-content">
-						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">已取消</text></view>
-						</view>
-						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
-						</view>
-						<!-- 预约电池时间地点 -->
-						<view class="order-timer-address">
-							<view class="order-time order-new">预约时间：2019-09-17 09:19</view>
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
-							<view class="order-name order-new">取消时间：2019-09-17 09:19</view>
-						</view>
-					</view>
-				</li>
-				<li>
-					<view class="order-list-content">
-						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">完成</text></view>
-						</view>
-						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
-						</view>
-						<!-- 预约电池时间地点 -->
-						<view class="order-timer-address">
-							<view class="order-time order-new">预约时间：2019-09-17 09:19</view>
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
-							<view class="order-name order-new">完成时间：2019-09-17 09:19</view>
-						</view>
-					</view>
-				</li>
-				<li>
-					<view class="order-list-content">
-						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">完成</text></view>
-						</view>
-						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
-						</view>
-						<!-- 预约电池时间地点 -->
-						<view class="order-timer-address">
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
-							<view class="order-time order-new">完成时间：2019-09-17 09:19</view>
-						</view>
-					</view>
-				</li>
-				<li>
-					<view class="order-list-content">
-						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">预约成功</text></view>
-						</view>
-						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
-						</view>
-						<!-- 预约电池时间地点 -->
-						<view class="order-timer-address">
-							<view class="order-time order-new">预约时间：2019-09-17 09:19</view>
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
-						</view>
-					</view>
-				</li>
-				<li>
-					<view class="order-list-content">
-						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">预约成功</text></view>
-						</view>
-						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
-						</view>
-						<!-- 预约电池时间地点 -->
-						<view class="order-timer-address">
-							<view class="order-time order-new">预约时间：2019-09-17 09:19</view>
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
-						</view>
-					</view>
-				</li>
-				<li>
-					<view class="order-list-content">
-						<view class="order-tit">
-							<text class="order-name">预约编号：xxxx500</text>
-							<view class="order-status-box"><text class="order-status">预约成功</text></view>
-						</view>
-						<view class="order-menu">
-							<view class="order-menu-name">汽车电池</view>
-							<view class="order-menu-number">电池组编号：xxx0005</view>
-						</view>
-						<!-- 预约电池时间地点 -->
-						<view class="order-timer-address">
-							<view class="order-time order-new">预约时间：2019-09-17 09:19</view>
-							<view class="order-name order-new">网点名称：祥科路炬芯研发大厦B1停车场</view>
+							<view class="order-time order-new" v-if="item.appointment_time !== null">预约时间:{{item.appointment_time}}</view>
+							<view class="order-name order-new">网点名称：{{item.battery_pack[2]}}</view>
+							<view class="order-name order-new" v-if="item.end_time !== null">{{item.end_time}}</view>
 						</view>
 					</view>
 				</li>
 			</ul>
-			<uni-load-more :status="loadingStatus" :content-text='loadingWord'></uni-load-more>
+			<uni-load-more v-if="orderlist.length > 4" :status="loadingStatus" :content-text='loadingWord'></uni-load-more>
 		</view>
 	
 		<!-- 暂无订单 --> 
@@ -134,15 +34,27 @@
 			<text>暂无订单</text>
 		</view>
 	
-	
+		<!-- 提示框 -->
+		<!-- <uni-popup :show="show" :type="type" :custom="true" :mask-click="false">
+			<view class="uni-tip">
+				<view class="uni-tip-title">提醒</view>
+				<view class="uni-tip-content">您是否确定删除当前订单</view>
+				<view class="uni-tip-group-button">
+					<view class="uni-tip-button" @click="removeorder">是</view>
+					<view class="uni-tip-button" @click="show = false">否</view>
+				</view>
+			</view>
+		</uni-popup> -->
 	</view>
 	
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
+	import uniPopup from "../../components/uni-popup/uni-popup.vue"
 	import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue'
 	export default {
-		 components: {uniLoadMore},
+		 components: {uniLoadMore,uniPopup},
 		data() {
 			return {
 				loadingStatus:'more',
@@ -151,17 +63,57 @@
 					contentrefresh: "正在加载...",
 					contentnomore: "没有更多数据了",
 				},
-				orderlist:[]
+				orderlist:[],
+				page:1,
+				nexturl:null,
+				Nonext:true,				//防止多次上拉加载
+				show: false,
+				type:'center',
+				orderIndex:-1
 			}
 		},
 		onReachBottom() {
 			this.loadingStatus = 'loading'
-			setTimeout(()=>{
-			this.loadingStatus = 'noMore'
-			},2000)
-			console.log('触底')
+			console.log(this.nexturl)
+			if(this.nexturl === null){
+				this.loadingStatus = 'noMore'
+			}else{
+				if(this.Nonext === true){
+					this.Nonext = false
+					this.getNextorder()
+				}
+			}
 		},
 		methods: {
+			getcodesuccess(e){
+				this.Nonext = true
+				this.orderlist.push.apply(this.orderlist,e.data.results);
+				this.nexturl = e.data.next
+			},
+			getNextorder(){
+				this.page++
+				requireurl.getData(`/applet/orders/?page=${this.page}`,this.getcodesuccess,this.file)
+			},
+			//删除订单
+			removeorder(id,index){
+				console.log("删除")
+				this.orderIndex = index
+				requireurl.getDeleteData(`/applet/delete_order/${id}/`,this.removeback,this.file)
+			},
+			removeback(){
+				this.orderlist.splice(this.orderIndex,1)
+				this.page = 1
+				requireurl.getData(`/applet/orders/?page=${this.page}`,this.getorderlist,this.file)
+			},
+			getorderlist(e){
+				this.Nonext = true
+				this.orderlist = []
+				this.orderlist.push.apply(this.orderlist,e.data.results);
+				this.nexturl = e.data.next
+			}
+		},
+		mounted() {
+			requireurl.getData(`/applet/orders/?page=${this.page}`,this.getcodesuccess,this.file)
 			
 		}
 	}
@@ -209,11 +161,18 @@
 							.order-status-box{
 								display: flex;
 								justify-content: space-between;
+								align-items: center;
 								.order-status{
 									font-size:26rpx;
 									font-weight:bold;
 									color:rgba(3,133,119,1);
 									line-height:70rpx;
+								}
+								image{
+									width: 36rpx;
+									height: 36rpx;
+									display: block;
+									margin:0 8rpx;
 								}
 							}
 						}
@@ -288,6 +247,54 @@
 				top: 788rpx;
 				left: 168px;
 
+			}
+		}
+		// 提示框
+		.uni-tip{
+			width:540rpx;
+		    height:281rpx;
+			background:rgba(247,247,247,1);
+			border-radius: 15rpx;
+			padding-top: 37rpx;
+			box-sizing: border-box;
+			.uni-tip-title{
+				font-size:34rpx;
+				font-family:SimHei;
+				color:rgba(0,0,0,1);
+				text-align: center;
+				line-height: 64rpx;
+			}
+			.uni-tip-content{
+				font-size:26rpx;
+				font-family:SimHei;
+				color:rgba(0,0,0,1);
+				line-height: 56rpx;
+				margin-bottom: 35rpx;
+				text-align: center;
+			}
+			.uni-tip-group-button{
+				width: 100%;
+				display: flex;
+				border-top: 2rpx solid #09141F;
+				position: absolute;
+				bottom: 0;
+				box-sizing: border-box;
+				.uni-tip-button{
+					width: 50%;
+					height: 88rpx;
+					box-sizing: border-box;
+					border-right: 2rpx solid #09141F;
+					font-size:34rpx;
+					font-family:SimHei;
+					color:#007AFF;
+					line-height:88rpx;
+					text-align: center;
+					&:last-child{
+						border: 0;
+						color:#FF002A;
+					}
+				}
+				
 			}
 		}
 	}

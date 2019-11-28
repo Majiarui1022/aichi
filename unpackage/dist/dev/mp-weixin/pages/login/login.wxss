@@ -107,6 +107,18 @@
 .login-box .login-pad-box .pohone-box .init-phone input:-ms-input-placeholder {
             color: #DDDDDD;
 }
+.login-box .login-pad-box .error-box {
+      width: 100%;
+      height: 64rpx;
+}
+.login-box .login-pad-box .error-box .errortit {
+        width: calc(100% - 106rpx);
+        height: 64rpx;
+        font-size: 26rpx;
+        line-height: 64rpx;
+        color: #DD524D;
+        padding-left: 106rpx;
+}
 .login-box .login-pad-box .get-code-but {
       width: 100%;
       height: 80rpx;
@@ -115,7 +127,6 @@
       font-size: 30rpx;
       color: white;
       line-height: 80rpx;
-      margin-top: 64rpx;
       text-align: center;
 }
 

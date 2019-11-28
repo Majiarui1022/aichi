@@ -82,4 +82,35 @@
 .change-pohone-box .change-phone-content .change-commit-data:active {
         background: #049d8c;
 }
+.change-pohone-box .uni-tip-two {
+    height: 218rpx;
+    width: 519rpx;
+    background: #f7f7f7;
+    border-radius: 5rpx;
+}
+.change-pohone-box .uni-tip-two .uni-tip-content {
+      width: 100%;
+      height: 128rpx;
+      font-size: 30rpx;
+      color: black;
+      line-height: 128rpx;
+      text-align: center;
+      border-bottom: 1rpx solid #000;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+}
+.change-pohone-box .uni-tip-two .uni-tip-group-button {
+      width: 100%;
+      height: 90rpx;
+      border: 0;
+      height: 90rpx;
+}
+.change-pohone-box .uni-tip-two .uni-tip-group-button .uni-tip-button {
+        width: 100%;
+        height: 90rpx;
+        text-align: center;
+        line-height: 90rpx;
+        font-size: 36rpx;
+        font-family: SimHei;
+}
 

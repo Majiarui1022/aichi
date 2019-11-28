@@ -7492,9 +7492,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*****************************!*\
-  !*** F:/Tanguan/pages.json ***!
-  \*****************************/
+/*!******************************!*\
+  !*** F:/爱驰/aichi/pages.json ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8399,20 +8399,20 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ }),
 /* 7 */
-/*!**********************************************!*\
-  !*** F:/Tanguan/pages.json?{"type":"style"} ***!
-  \**********************************************/
+/*!***********************************************!*\
+  !*** F:/爱驰/aichi/pages.json?{"type":"style"} ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "titleImage": "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1572836706&di=a0b4ce7f095d2342b6118bbb177d52c7&src=http://b-ssl.duitang.com/uploads/blog/201510/29/20151029140701_LXET5.jpeg", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown", "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/home/home": { "navigationBarTitleText": "扫一扫", "usingComponents": {} }, "pages/aboutwe/aboutwe": { "navigationBarTitleText": "关于我们", "usingComponents": {} }, "pages/netdetails/netdetails": { "navigationBarTitleText": "网点详情", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/sendcode/sendcode": { "navigationBarTitleText": "验证码", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/usermiddle/usermiddle": { "navigationBarTitleText": "个人中心", "usingComponents": {} }, "pages/userinfo/userinfo": { "navigationBarTitleText": "个人信息", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/changename/changename": { "navigationBarTitleText": "昵称", "usingComponents": {} }, "pages/order/order": { "navigationBarTitleText": "订单", "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/changephone/changephone": { "navigationBarTitleText": "修改手机号", "usingComponents": {} }, "pages/searchaddress/searchaddress": { "navigationBarTitleText": "网点搜索", "usingComponents": {} }, "pages/taskdian/taskdian": { "navigationBarTitleText": "", "usingComponents": {} }, "pages/successappointment/successappointment": { "navigationBarTitleText": "预约成功", "usingComponents": {} }, "pages/selectlogin/selectlogin": { "navigationBarTitleText": "注册/登录", "usingComponents": {} }, "pages/login/login": { "navigationBarTitleText": "手机登录", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#FFFFFF", "enablePullDownRefresh": false } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "扫一扫", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown", "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/home/home": { "navigationBarTitleText": "扫一扫", "usingComponents": {} }, "pages/aboutwe/aboutwe": { "navigationBarTitleText": "关于我们", "usingComponents": {} }, "pages/netdetails/netdetails": { "navigationBarTitleText": "网点详情", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/sendcode/sendcode": { "navigationBarTitleText": "验证码", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/usermiddle/usermiddle": { "navigationBarTitleText": "个人中心", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/userinfo/userinfo": { "navigationBarTitleText": "个人信息", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/changename/changename": { "navigationBarTitleText": "昵称", "usingComponents": {} }, "pages/order/order": { "navigationBarTitleText": "订单", "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more", "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/changephone/changephone": { "navigationBarTitleText": "修改手机号", "usingComponents": { "uni-popup": "/components/uni-popup/uni-popup" } }, "pages/searchaddress/searchaddress": { "navigationBarTitleText": "网点搜索", "usingComponents": {} }, "pages/successappointment/successappointment": { "navigationBarTitleText": "预约成功", "usingComponents": {} }, "pages/selectlogin/selectlogin": { "navigationBarTitleText": "注册/登录", "usingComponents": {} }, "pages/login/login": { "navigationBarTitleText": "手机登录", "usingComponents": {} }, "pages/taskdian/taskdian": { "navigationBarTitleText": "", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#FFFFFF", "enablePullDownRefresh": false } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!*********************************************!*\
-  !*** F:/Tanguan/pages.json?{"type":"stat"} ***!
-  \*********************************************/
+/*!**********************************************!*\
+  !*** F:/爱驰/aichi/pages.json?{"type":"stat"} ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8537,7 +8537,169 @@ function normalizeComponent (
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
+/* 21 */
+/*!**************************************!*\
+  !*** F:/爱驰/aichi/requist/requist.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {var host = 'http://10.102.100.120:8000';
+
+//  	http://47.103.80.249:8000
+/**     http://10.102.100.23:8001
+ * POST请求，
+ * URL：接口
+ * postData：参数，json类型
+ * doSuccess：成功的回调函数
+ * doFail：失败的回调函数
+ * loginstatus:为ture检测是否登录
+ */
+function request(url, postData, doSuccess, doFail, loginstatus) {
+  if (loginstatus === true && !uni.getStorageSync('storage_user').token) {
+    uni.navigateTo({
+      url: '../selectlogin/selectlogin' });
+
+    return false;
+  }
+  wx.request({
+    //项目的真正接口，通过字符串拼接方式实现
+    url: host + url,
+    header: {
+      "content-type": "application/json;charset=UTF-8",
+      'Authorization': uni.getStorageSync('storage_user').token ? 'JWT ' + uni.getStorageSync('storage_user').token : '' },
+
+    data: postData,
+    method: 'POST',
+    success: function success(res) {
+      //参数值为res.data,直接将返回的数据传入	
+      console.log(res);
+      doSuccess(res);
+    },
+    fail: function fail() {
+      doFail();
+    } });
+
+}
+
+
+
+
+
+
+
+//GET请求，不需传参，直接URL调用，
+function getData(url, doSuccess, doFail, loginstatus) {
+  console.log(loginstatus);
+  if (loginstatus === true && !uni.getStorageSync('storage_user').token) {
+    uni.navigateTo({
+      url: '../selectlogin/selectlogin' });
+
+    return false;
+  }
+  wx.request({
+    url: host + url,
+    header: {
+      "content-type": "application/json;charset=UTF-8",
+      'Authorization': uni.getStorageSync('storage_user').token ? 'JWT ' + uni.getStorageSync('storage_user').token : '' },
+
+    method: 'GET',
+    success: function success(res) {
+      console.log(res);
+      doSuccess(res);
+    },
+    fail: function fail() {
+      doFail();
+    } });
+
+}
+
+//delete请求
+function getDeleteData(url, doSuccess, doFail) {
+  wx.request({
+    url: host + url,
+    header: {
+      "content-type": "application/json;charset=UTF-8",
+      'Authorization': uni.getStorageSync('storage_user').token ? 'JWT ' + uni.getStorageSync('storage_user').token : '' },
+
+    method: 'delete',
+    success: function success(res) {
+      console.log(res);
+      doSuccess(res);
+    },
+    fail: function fail(err) {
+      doFail(err);
+    } });
+
+}
+
+
+
+//updata请求
+function getUpdataData(url, postData, doSuccess, doFail) {
+  wx.request({
+    //项目的真正接口，通过字符串拼接方式实现
+    url: host + url,
+    header: {
+      "content-type": "application/json;charset=UTF-8",
+      'Authorization': uni.getStorageSync('storage_user').token ? 'JWT ' + uni.getStorageSync('storage_user').token : '' },
+
+    data: postData,
+    method: 'update',
+    success: function success(res) {
+      //参数值为res.data,直接将返回的数据传入
+      console.log(res);
+      doSuccess(res);
+    },
+    fail: function fail() {
+      doFail();
+    } });
+
+}
+
+
+
+/**
+   * PUT请求，
+   * URL：接口
+   * postData：参数，json类型
+   * doSuccess：成功的回调函数
+   * doFail：失败的回调函数
+   */
+function getPutData(url, postData, doSuccess, doFail) {
+  wx.request({
+    //项目的真正接口，通过字符串拼接方式实现
+    url: host + url,
+    header: {
+      "content-type": "application/json;charset=UTF-8",
+      'Authorization': uni.getStorageSync('storage_user').token ? 'JWT ' + uni.getStorageSync('storage_user').token : '' },
+
+    data: postData,
+    method: 'Put',
+    success: function success(res) {
+      //参数值为res.data,直接将返回的数据传入
+      console.log(res);
+      doSuccess(res);
+    },
+    fail: function fail() {
+      doFail();
+    } });
+
+}
+
+
+module.exports.request = request;
+module.exports.getData = getData;
+module.exports.getPutData = getPutData;
+
+
+module.exports.getUpdataData = getUpdataData;
+
+module.exports.getDeleteData = getDeleteData;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 22 */,
 /* 23 */,
 /* 24 */,
@@ -8545,10 +8707,11 @@ function normalizeComponent (
 /* 26 */,
 /* 27 */,
 /* 28 */,
-/* 29 */
-/*!*********************************!*\
-  !*** F:/Tanguan/static/sao.wav ***!
-  \*********************************/
+/* 29 */,
+/* 30 */
+/*!**********************************!*\
+  !*** F:/爱驰/aichi/static/sao.wav ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

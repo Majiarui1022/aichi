@@ -3,7 +3,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"titleImage":"https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1572836706&di=a0b4ce7f095d2342b6118bbb177d52c7&src=http://b-ssl.duitang.com/uploads/blog/201510/29/20151029140701_LXET5.jpeg"
+				"navigationBarTitleText":"扫一扫"
 			}
 		},
 		{

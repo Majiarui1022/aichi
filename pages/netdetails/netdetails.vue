@@ -4,51 +4,37 @@
 			<!-- 网点地址 -->
 			<view class="address-box">
 				<view class="address">
-					<p class="address-name">祥科路炬芯研发大厦B1停车场</p>
-					<p class="address-pic">祥科路炬芯研发大厦B1停车场</p>
+					<p class="address-name">{{address.name}}</p>
+					<p class="address-pic">{{address.address}}</p>
 				</view>
-				<view class="distance">
+				<view class="distance" @click="goaddress">
 					<image src="../../static/maplogo.png" mode=""></image>
-					<text>120.1Km</text>
+					<text>{{address.distance}}</text>
 				</view>
 			</view>
 			<!-- 网点充电桩 -->
 			<view class="give-dian-box">
 				<ul>
-					<li>
+					<li v-for="(item,index) in listdetail" :key="index">
 						<view class="menu">
-							<view class="one"><image class="car" src="../../static/car.png" mode=""></image><span>未充电</span></view>
+							<view class="one"><image class="car" :src="item.category === 'car' ?'../../static/car.png' : '../../static/bike.png' " mode=""></image><span>{{item.status}}</span></view>
 							<view class="two">
 								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
+									<block v-for="(aaaaa,indexT) in listnum" :key="indexT">
+										<view class="electricity-onec">
+											<i :style="{'width': (indexT + 1) <= Math.round(item.level/10) ? '100%':'2%'}"></i>
+										</view>
 									</block>
 								</view>
-								<span class="show-electri-num">100%</span>
+								<span class="show-electri-num">{{item.level}}%</span>
 							</view>
 							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
+								<p>电池组编号：<span>{{item.number}}</span></p>
 							</view>
 						</view>
-						<view class="but" @click="openPopup">预约</view>
+						<view class="but" :class="item.is_appointment === 1  ||  is_appointment === 4? 'active' : ''" @click="openPopup(item.is_appointment,index)">{{item.is_appointment === 3 ? '预约中' :'预约'}}</view>
 					</li>
-					<li>
-						<view class="menu">
-							<view class="one"><image class="bike" src="../../static/bike.png" mode=""></image><span>未充电</span></view>
-							<view class="two">
-								<view class="electricity-bar">
-									<block v-for="(item,index) in listnum" :key="index">
-										<i></i>
-									</block>
-								</view>
-								<span class="show-electri-num">100%</span>
-							</view>
-							<view class="three">
-								<p>电池组编号：<span>xxx0005/17年生产</span></p>
-							</view>
-						</view>
-						<view class="but" @click="openPopup">预约</view>
-					</li>
+				
 				</ul>
 			</view>
 			
@@ -57,32 +43,34 @@
 				<view class="piker-view">
 					<!-- 电池名称 -->
 					<view class="piker-tit">
-						<p class="piker-name">汽车电池</p>
+						<p class="piker-name">{{oneclist.status}}</p>
 					</view>
 					<!-- 电池信息 -->
 					<view class="menu">
 						<view class="one">
-							<image src="../../static/car.png" class="car" mode=""></image>
-							<span>未充电</span>
+							<image :src="oneclist.category === 'car' ?'../../static/car.png' : '../../static/bike.png' " class="car" mode=""></image>
+							<span>{{oneclist.status}}</span>
 						</view>
 						<view class="two">
 							<view class="electricity-bar">
-								<block v-for="(item,index) in listnum" :key="index">
-									<i></i>
+								<block v-for="(aaaaa,indexT) in listnum" :key="indexT">	
+									<view class="electricity-onec">
+										<i :style="{'width': (indexT + 1) <= Math.round(oneclist.level/10) ? '100%':'2%'}"></i>	
+									</view>									
 								</block>
 							</view>
-							<span class="show-electri-num">100%</span>
+							<span class="show-electri-num">{{oneclist.level}}%</span>
 						</view>
 						<view class="three">
-							<p>电池组编号：<span>xxx0005/17年生产</span></p>
+							<p>电池组编号：<span>{{oneclist.number}}</span></p>
 						</view>
 					</view>
 					<!-- 电池介绍 -->
 					<view class="word-content">
-						<p class="word-menu">中国文字史是中国文字长达数千年的发展和演变的历史过程, 依照发展的时间顺序,基本可以分为秦、汉以前音乐、汉、唐 时期文字、宋、秦、清、明、元、天、地、宋、秦、清、明、元、天、地、宋、秦、清、明、元、天、地、宋、秦、清、明、元、天、地、商等等</p>
+						<p class="word-menu">{{oneclist.appointment_hint}}</p>
 					</view>
 				</view>
-				<view class="piker-but" @click="quedingnle">确定预约</view>
+				<view class="piker-but" :class="oneclist.is_appointment === true ? '' : 'active'"  @click="quedingnle(oneclist.id)">确定预约</view>
 			</uni-popup>
 			
 			
@@ -103,7 +91,7 @@
 			<uni-popup :show="authentication" :type="type" :custom="true" :mask-click="false">
 				<view class="uni-tip uni-tip-two">
 					<view class="uni-tip-title">提醒</view>
-					<view class="uni-tip-content">您所选的电池已有电池被预约，请重新预约</view>
+					<view class="uni-tip-content">{{shownopro}}</view>
 					<view class="uni-tip-group-button">
 						<view class="uni-tip-button" @click="cancel">确定</view>
 					</view>
@@ -115,6 +103,7 @@
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
 	import uniPopup from "../../components/uni-popup/uni-popup.vue"
 	export default {
 	  components: {uniPopup},
@@ -123,33 +112,169 @@
 				listnum:10,
 				show: false,
 				type:'center',
-				authentication:false
+				authentication:false,
+				addressID:'',
+				listdetail:[],
+				oneclist:{},
+				address:{},
+				shownopro:'您所选的电池已有电池被预约，请重新预约'
 			}
 		},  
+		onShow() {
+			var _that = this
+			uni.getLocation({
+			    type: 'gcj02', //返回可以用于uni.openLocation的经纬度
+			    success:  (res)=> {
+					console.log('用户允许')
+					console.log(res)
+					this.$nextTick(()=>{
+						this.latitude = res.latitude
+						this.longitude = res.longitude
+						uni.setStorage({
+						    key: 'storage_latitude',
+						    data:  res.latitude,
+						    success: function () {
+								uni.setStorage({
+									    key: 'storage_longitude',
+									    data:  res.longitude,
+								});
+								
+								
+								console.log('请求了网点ID' + _that.addressID)
+								requireurl.getData(`/applet/outlet/address/detail/?location=${uni.getStorageSync('storage_longitude')},${uni.getStorageSync('storage_latitude')}&id=${_that.addressID}`,_that.getaddressgo,_that.fileaddress)
+								
+						    }
+						});
+					})
+				},
+				fail :(err)=> {
+					uni.removeStorage({
+					    key: 'storage_latitude',
+					    success: function (res) {
+							uni.removeStorage({
+							    key: 'storage_longitude',
+							    success: function (res) {
+									console.log('用户拒绝授权，清除位置')
+							    }
+							});
+					    }
+					});
+					
+				}
+			});
+			
+		},
 		onLoad(option) { //option为object类型，会序列化上个页面传递的参数
 			console.log(option); //打印出上个页面传递的参数。
+			this.addressID = option.id
+			console.log('拿到了网点ID' + this.addressID)
+			this.getaddresslist(option.id)
+			requireurl.getData(`/applet/outlet/detail/?id=${option.id}`,this.getaddresslist,this.fileaddress)
+			requireurl.getData(`/applet/outlet/address/detail/?location=${uni.getStorageSync('storage_longitude')},${uni.getStorageSync('storage_latitude')}&id=${option.id}`,this.getaddressgo,this.fileaddress)
 		},
 		methods: {
 			//打开底部弹窗
-			openPopup(){
+			openPopup(status,index){
+				if(status === 1){
+					this.shownopro = "改电池已被别人预约"
+					return false
+				}else if(status === 2){
+					this.authentication = true
+					this.shownopro = "该电池电量不足，请重新选择"
+					return false
+				}else if(status === 3){
+					return false
+				}else if(status === 4){
+					this.authentication = true
+					this.shownopro = "您已有预约"
+					return false
+				}else if(status === 5){
+					this.authentication = true
+					this.shownopro = "预约失败，您今日已取消预约次数上限"
+					return false
+				}
+				this.oneclist = this.listdetail[index]
 				this.$refs.popup.open()
 			},
 			//关闭底部弹窗
 			closePopup(){
+				this.oneclist = {}
 				this.$refs.popup.close()
 			},
 			//打开  已被预约提醒  + 暂未认证提醒
-			quedingnle(){
-				this.authentication = true
-				uni.navigateTo({
-				    url: '../successappointment/successappointment'
+			quedingnle(id){
+				let obj = {
+					battery_pack:id
+				}
+				requireurl.request("/applet/appointment/order/",obj,this.timentsuc,this.timeerr,true)
+				
+			},
+			
+			//预约电池成功回调
+			timentsuc(e){
+				if(e.statusCode === 201){
+					this.$refs.popup.close()
+					uni.setStorage({
+					    key: 'storage_number',
+					    data: e.data.number,
+					    success: function () {
+							uni.setStorage({
+							    key: 'storage_name',
+							    data: e.data.appointment_duration,
+							    success: function () {
+									uni.reLaunch({
+									    url: '../successappointment/successappointment'
+									});
+							    }
+							});
+					    }
+					});
+				}
+			},
+			timeerr(){
+				console.log('预约错误回调')
+			},
+			//网点详情
+			getaddresslist(e){
+				console.log(e)
+				if(e.statusCode === 200){
+					this.listdetail = e.data
+				}
+			},
+			//地址详情
+			getaddressgo(e){
+				if(e.statusCode === 200){
+					this.address = e.data
+				}
+			},
+			
+			
+			//导航
+			goaddress(){
+				console.log('我执行了')
+				// let { lat, lon, name, address } = this.data.address;
+				// wx.openLocation({
+				//   latitude: +lat,
+				//   longitude: +lon,
+				//   name,
+				//   address: address
+				// });
+				let { lat, lon, name, address } = this.address;
+				console.log(lat,lon,name,address)
+				// let name = _that.address.name
+				wx.openLocation({
+					latitude: +lat,
+				    longitude: +lon,
+				    name,
+				    address: address
 				});
 			},
+			
 			//关闭  已被预约提醒  + 暂未认证提醒
 			cancel(){
 				this.authentication=false
 			}
-		}
+		},
 	}
 </script>
 
@@ -236,6 +361,9 @@
 							color:rgba(255,255,255,1);
 							line-height:60rpx;
 							text-align: center;
+							&.active{
+								background: #BEBEBE;
+							}
 						}
 						.menu{
 							flex:1;
@@ -266,13 +394,20 @@
 								margin-top: 18rpx;
 								.electricity-bar{
 									overflow: hiddem;
-									i{
+									.electricity-onec{
 										float: left;
 										width:8rpx;
 										height:32rpx;
-										background:rgba(3,133,119,1);
 										border-radius:4rpx;
+										background: #BEBEBE;
 										margin-right: 8rpx;
+									}
+									i{
+										display: block;
+										border-radius:4rpx;
+										width: 100%;
+										height: 100%;
+										background:rgba(3,133,119,1);
 									}
 								}
 								.show-electri-num{
@@ -353,13 +488,20 @@
 							margin-top: 18rpx;
 							.electricity-bar{
 								overflow: hiddem;
-								i{
+								.electricity-onec{
 									float: left;
 									width:8rpx;
 									height:32rpx;
-									background:rgba(3,133,119,1);
 									border-radius:4rpx;
+									background: #BEBEBE;
 									margin-right: 8rpx;
+								}
+								i{
+									display: block;
+									border-radius:4rpx;
+									width: 100%;
+									height: 100%;
+									background:rgba(3,133,119,1);
 								}
 							}
 							.show-electri-num{

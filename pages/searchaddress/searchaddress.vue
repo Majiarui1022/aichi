@@ -20,11 +20,13 @@
 				<view class="address-list-padding">
 					<ul>
 						<li v-for="(item,index) in addresslist" :key="index">
-							<view class="address-content">
-								<p class="address">{{item.address}}</p>
-								<p class="address-ic">{{item.addressic}}</p>
+							<view class="adress-list-con" @click="goproaddress(item)">
+								<view class="address-content">
+									<p class="address">{{item.name}}</p>
+									<p class="address-ic">{{item.address}}</p>
+								</view>
+								<view class="distance">{{item.distance}}</view>
 							</view>
-							<view class="distance">100km</view>
 						</li>
 					</ul>
 				</view>
@@ -34,55 +36,12 @@
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
 	export default {
 		data() {
 			return {
-				addresslist:[
-					{
-						address:'祥科路炬芯研发大厦B1大厦B1停车场大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层asdasdasdasdasdasdsad'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					},
-					{
-						address:'祥科路炬芯研发大厦B1停车场大厦B1停车场',
-						addressic:'上海市浦东新区祥科路炬芯研发大厦B1层'
-					}
-				]
+				addresslist:[],
+				addressname:''
 			}
 		},
 		methods: {
@@ -94,13 +53,39 @@
 			},
 			initinput(e){
 				console.log(e.detail.value)
+				this.addressname = e.detail.value
+			this.getaddress()
 			},
 			oksendinput(){
 				console.log('我点击了完成按钮')
 			},
 			shiquinit(){
 				console.log('我失去了焦点')
+			},
+			goproaddress(e){
+				uni.navigateTo({
+				    url: `../netdetails/netdetails?id=${e.id}`
+				});
+			},
+			
+			
+			//搜索地址
+			getaddress(){
+				requireurl.getData(`/applet/search/outlets/?location=${uni.getStorageSync('storage_longitude')},${uni.getStorageSync('storage_latitude')}&search=${this.addressname}&radius=&action=search`,this.cabackaddredd,this.erraddress)
+			},
+			
+			
+			//搜索地址回掉
+			cabackaddredd(e){
+				this.addresslist = e.data
+			},
+			erraddress(e){
+				console.log(e)
 			}
+		},
+		mounted() {
+			
+			this.getaddress()
 		}
 	}
 </script>
@@ -176,31 +161,38 @@
 							justify-content: space-between;
 							align-items: center;
 							box-sizing: border-box;
-							.address-content{
-								.address{
-									font-size:28rpx;
-									color:rgba(51,51,51,1);
-									line-height:38rpx;
-									width: 600rpx;
-									text-overflow: ellipsis;
-									overflow: hidden;
-									white-space: nowrap;
+							.adress-list-con{
+								width: 100%;
+								height: 100%;
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+								.address-content{
+									.address{
+										font-size:28rpx;
+										color:rgba(51,51,51,1);
+										line-height:38rpx;
+										width: 600rpx;
+										text-overflow: ellipsis;
+										overflow: hidden;
+										white-space: nowrap;
+									}
+									.address-ic{
+										margin-top: 12rpx;
+										width: 600rpx;
+										font-size:28rpx;
+										color:rgba(153,153,153,1);
+										line-height:38rpx;
+										text-overflow: ellipsis;
+										overflow: hidden;
+										white-space: nowrap;
+									}
 								}
-								.address-ic{
-									margin-top: 12rpx;
-									width: 600rpx;
+								.distance{
 									font-size:28rpx;
+									font-family:SimHei;
 									color:rgba(153,153,153,1);
-									line-height:38rpx;
-									text-overflow: ellipsis;
-									overflow: hidden;
-									white-space: nowrap;
 								}
-							}
-							.distance{
-								font-size:28rpx;
-								font-family:SimHei;
-								color:rgba(153,153,153,1);
 							}
 						}
 					}

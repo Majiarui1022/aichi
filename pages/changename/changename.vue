@@ -8,6 +8,7 @@
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
 	export default {
 		data() {
 			return {
@@ -21,9 +22,21 @@
 			
 			//发送名字
 			SendName(){
-				uni.navigateTo({
-				    url: '../userinfo/userinfo'
-				});
+				let data = {
+					nickname : this.inputValue
+				}
+				requireurl.getPutData('/users/nickname/',data,this.changename,this.file)
+			},
+			//修改用户名回调
+			changename(e){
+				if(e.statusCode === 200){
+					let storeobj = uni.getStorageSync('storage_user')
+					storeobj.nickname = this.inputValue
+					uni.setStorageSync('storage_user',storeobj);
+					uni.navigateBack({
+					    delta:1
+					});
+				}
 			}
 		}
 	}

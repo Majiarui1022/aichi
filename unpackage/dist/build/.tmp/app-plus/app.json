@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/aboutwe/aboutwe",
+    "pages/netdetails/netdetails",
+    "pages/sendcode/sendcode",
+    "pages/usermiddle/usermiddle",
+    "pages/userinfo/userinfo",
+    "pages/changename/changename",
+    "pages/order/order",
+    "pages/changephone/changephone",
+    "pages/searchaddress/searchaddress",
+    "pages/successappointment/successappointment",
+    "pages/selectlogin/selectlogin",
+    "pages/login/login",
+    "pages/taskdian/taskdian"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF",
+    "enablePullDownRefresh": false
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "Tanguan",
+  "compilerVersion": "2.3.7",
+  "usingComponents": {}
+}

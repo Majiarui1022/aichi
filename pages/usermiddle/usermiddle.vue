@@ -4,10 +4,10 @@
 		<view class="usermiddle-header" @click="gouserinfo">
 			<view class="middle-left">
 				<view class="user-header-img">
-					<image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3343968209,3672130651&fm=26&gp=0.jpg" mode=""></image>
+					<image :src="headerImg" mode=""></image>
 				</view>
 				<view class="user-header-userinfo">
-					<p classu="user-phone">13845785678</p>
+					<p classu="user-phone">{{username}}</p>
 				</view>
 			</view>
 			<view class="middle-tight"></view>
@@ -30,16 +30,40 @@
 		</view>
 	
 		<!-- 退出登录but -->
-		<view class="clear-login">退出登录</view>
+		<view class="clear-login" @click="callphone = true">退出登录</view>
+		
+		<!-- 提示框 -->
+		<uni-popup :show="callphone" :type="type" :custom="true" :mask-click="false">
+			<view class="uni-tip callphone">
+				<view class="callphone-content">确定退出登录吗？</view>
+				<view class="callphone-but-box">
+					<view class="callphone-left-but" @click="clearLogin">确定</view>
+					<view class="callphone-right-but" @click="callphone = false">取消</view>
+				</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script>
+	import uniPopup from "../../components/uni-popup/uni-popup.vue"
 	export default {
+	  components: {uniPopup},
 		data() {
 			return {
-				
+				headerImg : uni.getStorageSync('storage_user').head_img_url,
+				username : uni.getStorageSync('storage_user').nickname,
+				callphone:false,
+				type:'center'
 			}
+		},
+		onShow(){
+			setTimeout(()=>{
+				console.log('onshow了')
+				this.headerImg = uni.getStorageSync('storage_user').head_img_url
+				this.username = uni.getStorageSync('storage_user').nickname 
+			},500)
+			
 		},
 		methods: {
 			//个人信息
@@ -59,8 +83,17 @@
 				uni.navigateTo({
 				    url: '../aboutwe/aboutwe'
 				});
+			},
+			
+			//退出登录
+			clearLogin(){
+				uni.removeStorageSync('storage_user');
+				this.callphone = false
+				uni.reLaunch({
+				    url: '../index/index'
+				});
 			}
-		}
+		},
 	}
 </script>
 
@@ -142,6 +175,46 @@
 			position: fixed;
 			left: 0;
 			bottom: 72rpx;
+		}
+		
+		//退出登录
+		.callphone{
+			width:559rpx;
+			height:269rpx;
+			background:rgba(255,255,255,1);
+			padding: 76rpx 50rpx 36rpx 50rpx;
+			box-sizing: border-box;
+			.callphone-content{
+				font-size:28rpx;
+				font-family:FZLanTingHeiS-R-GB;
+				color:rgb(51, 51, 51);
+				line-height:28rpx;
+				margin-bottom: 38rpx;
+				text-align: center;
+			}
+			.callphone-but-box{
+				width: 100%;
+				height: 58rpx;
+				display: flex;
+				justify-content: space-between;
+				view{
+					font-size:28rpx;
+					font-family:SimHei;
+					color:rgba(255,255,255,1);
+					line-height:58rpx;
+					text-align: center;
+				}
+				.callphone-left-but{
+					width:180rpx;
+					height:58rpx;
+					background:rgba(3,133,119,1);
+				}
+				.callphone-right-but{
+					width:180rpx;
+					height:58rpx;
+					background:#999999;
+				}
+			}
 		}
 	}
 </style>

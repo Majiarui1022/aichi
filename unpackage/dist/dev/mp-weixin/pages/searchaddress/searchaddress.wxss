@@ -122,30 +122,46 @@
             -webkit-box-sizing: border-box;
                     box-sizing: border-box;
 }
-.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .address-content .address {
-              font-size: 28rpx;
-              color: #333333;
-              line-height: 38rpx;
-              width: 600rpx;
-              -o-text-overflow: ellipsis;
-                 text-overflow: ellipsis;
-              overflow: hidden;
-              white-space: nowrap;
+.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .adress-list-con {
+              width: 100%;
+              height: 100%;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: justify;
+              -webkit-justify-content: space-between;
+                  -ms-flex-pack: justify;
+                      justify-content: space-between;
+              -webkit-box-align: center;
+              -webkit-align-items: center;
+                  -ms-flex-align: center;
+                      align-items: center;
 }
-.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .address-content .address-ic {
-              margin-top: 12rpx;
-              width: 600rpx;
-              font-size: 28rpx;
-              color: #999999;
-              line-height: 38rpx;
-              -o-text-overflow: ellipsis;
-                 text-overflow: ellipsis;
-              overflow: hidden;
-              white-space: nowrap;
+.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .adress-list-con .address-content .address {
+                font-size: 28rpx;
+                color: #333333;
+                line-height: 38rpx;
+                width: 600rpx;
+                -o-text-overflow: ellipsis;
+                   text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
 }
-.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .distance {
-              font-size: 28rpx;
-              font-family: SimHei;
-              color: #999999;
+.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .adress-list-con .address-content .address-ic {
+                margin-top: 12rpx;
+                width: 600rpx;
+                font-size: 28rpx;
+                color: #999999;
+                line-height: 38rpx;
+                -o-text-overflow: ellipsis;
+                   text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+}
+.address-section .address-list-section .address-list-menu .address-list-padding ._ul ._li .adress-list-con .distance {
+                font-size: 28rpx;
+                font-family: SimHei;
+                color: #999999;
 }
 

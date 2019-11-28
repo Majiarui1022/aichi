@@ -10,8 +10,11 @@
 					</picker>
 				</view>
 				<view class="init-phone">
-					<input class="uni-input" type="number" placeholder="这是一个数字输入框" maxlength="11"/>
+					<input class="uni-input" v-model="usermobile" type="number" placeholder="这是一个数字输入框" maxlength="11"/>
 				</view>
+			</view>
+			<view class="error-box">
+				<text class="errortit" v-if="errorword">{{errorword}},请稍后再试。</text>
 			</view>
 			<view class="get-code-but" @click="goGetcode">获取验证码</view>
 		</view>
@@ -19,11 +22,14 @@
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
 	export default {
 		data() {
 			return {
 				array: ['+87', '+88', '+89', '+90', '91', '+92','+100'],
 				index: 0,
+				usermobile:'17609106619',
+				errorword:'',										//错误提示内容
 			}
 		},
 		methods: {
@@ -31,10 +37,36 @@
 				console.log('picker发送选择改变，携带值为', e.target)
 				this.index = e.target.value
 			},
+			//获取验证码
 			goGetcode(){
-				uni.navigateTo({
-					url:'../sendcode/sendcode'
-				})
+				var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+				if(!myreg.test(this.usermobile) || this.usermobile.length < 11){
+					return false
+				}
+				let data = {
+					mobile:this.usermobile
+				}
+				requireurl.request('/users/codes/',data,this.getcodesuccess,this.file)
+			},
+			//获取验证码回掉
+			getcodesuccess(e){
+				var _that = this
+				if(e.statusCode === 200){
+					uni.setStorage({
+					    key: 'storage_mobile',
+					    data: this.usermobile,
+					    success: function () {
+					        console.log('success');
+							_that.errorword = ''
+							uni.navigateTo({
+								url:'../sendcode/sendcode'
+							})
+					    }
+					});
+				}else{
+					this.errorword = e.data.err
+				}
+			
 			}
 		}
 	}
@@ -105,6 +137,18 @@
 					}
 				}
 			}
+			.error-box{
+				width: 100%;
+				height: 64rpx;
+				.errortit{
+					width: calc(100% - 106rpx);
+					height: 64rpx;
+					font-size: 26rpx;
+					line-height: 64rpx;
+					color: #DD524D;
+					padding-left: 106rpx;
+				}
+			}
 			.get-code-but{
 				width: 100%;
 				height: 80rpx;
@@ -113,7 +157,6 @@
 				font-size:30rpx;
 				color:rgba(255,255,255,1);
 				line-height:80rpx;
-				margin-top: 64rpx;
 				text-align: center;
 			}
 		}

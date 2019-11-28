@@ -1,29 +1,29 @@
 <template>
 	<view class="code-box">
 		<p class="initcode">输入验证码</p>
-		<p class="send-tit">验证码已发送至：138****5678</p>
+		<p class="send-tit">验证码已发送至：{{usermobile}}</p>
 		<!-- 输入验证码 -->
 		<view class="init-box">
-			<input type="number" v-model="aaaaa" maxlength="6" @focus="asdasd" readonlyunselectable="on"/>
+			<input type="number" v-model="code" maxlength="6" @focus="asdasd" readonlyunselectable="on"/>
 			<view class="number-box">
-				<view class="num">{{aaaaa.charAt(0)}}</view>
-				<view class="num">{{aaaaa.charAt(1)}}</view>
-				<view class="num">{{aaaaa.charAt(2)}}</view>
-				<view class="num">{{aaaaa.charAt(3)}}</view>
-				<view class="num">{{aaaaa.charAt(4)}}</view>
-				<view class="num">{{aaaaa.charAt(5)}}</view>
+				<view class="num">{{code.charAt(0)}}</view>
+				<view class="num">{{code.charAt(1)}}</view>
+				<view class="num">{{code.charAt(2)}}</view>
+				<view class="num">{{code.charAt(3)}}</view>
+				<view class="num">{{code.charAt(4)}}</view>
+				<view class="num">{{code.charAt(5)}}</view>
 			</view>
 		</view>
 		<view class="get-code-box">
 			<view v-if="showcode === 0" class="get-code" @click="getcode">获取验证码</view>
 			<p v-if="showcode === 1" class="resend-code">{{numbertime}}s重新发送</p>
-			<p v-if="showcode === 2" class="resend" @click="getcode">重新发送</p>
+			<p v-if="showcode === 2" class="resend" @click="AnewSendCode">重新发送</p>
 		</view>
 		
 		<!-- 验证码错误 -->
 		<uni-popup :show="authentication" :type="type" :custom="true" :mask-click="false">
 			<view class="uni-tip uni-tip-two">
-				<view class="uni-tip-content">验证码错误，请重新输入。</view>
+				<view class="uni-tip-content">验证码错误或已失效，请重试。</view>
 				<view class="uni-tip-group-button">
 					<view class="uni-tip-button" @click="cancel">确定</view>
 				</view>
@@ -33,17 +33,19 @@
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
 	import uniPopup from "../../components/uni-popup/uni-popup.vue"
 	export default {
 	  components: {uniPopup},
 		data() {
 			return {
-				aaaaa:'',
+				code:'',
 				showcode:1,
 				numbertime:59,
 				time:null,
 				type:'center',
-				authentication:false
+				authentication:false,
+				usermobile:uni.getStorageSync('storage_mobile')
 			}
 		},
 		methods: {
@@ -53,7 +55,6 @@
 			
 			//获取验证码
 			getcode(){
-				this.authentication = true
 				this.showcode = 1
 				this.time = setInterval(()=>{
 					this.numbertime--
@@ -63,6 +64,56 @@
 						clearInterval(this.time)
 					}
 				},1000)
+			},
+			
+			
+			
+			//发送验证码
+			sedeCode(){
+				let data = {
+					mobile:uni.getStorageSync('storage_mobile'),
+					code : this.code
+				}
+				requireurl.request('/users/login/',data, this.getCoodesuc, this.getFile)
+			},
+			
+			//发送验证码回调
+			getCoodesuc(e){
+				if(e.statusCode === 201){
+					console.log('登录成功')
+					uni.removeStorage({
+					    key: 'storage_mobile',
+					    success: function (res) {
+							uni.setStorageSync('storage_user', e.data);
+							uni.reLaunch({
+							    url: '../index/index'
+							});
+					    }
+					});
+				}else{
+					this.authentication = true
+					this.code = ''
+				}
+			},
+			
+			
+			// 重新发送验证码
+			AnewSendCode(){
+				let data = {
+					mobile:uni.getStorageSync('storage_mobile')
+				}
+				requireurl.request('/users/codes/',data,this.Anewsuccess)
+			},
+			
+			//重新发送回调
+			Anewsuccess(e){
+				if(e.statusCode === 200){
+					this.getcode()
+				}
+			},
+			
+			getFile(){
+				console.log('验证码错误')
 			},
 			
 			
@@ -80,8 +131,11 @@
 			}
 		},
 		watch:{
-			aaaaa(news,olds){
+			code(news,olds){
 				console.log(news.length)
+				if(news.length === 6){
+					this.sedeCode()
+				}
 			}
 		}
 	}

@@ -125,4 +125,49 @@
     left: 0;
     bottom: 72rpx;
 }
+.usermiddle-box .callphone {
+    width: 559rpx;
+    height: 269rpx;
+    background: white;
+    padding: 76rpx 50rpx 36rpx 50rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.usermiddle-box .callphone .callphone-content {
+      font-size: 28rpx;
+      font-family: FZLanTingHeiS-R-GB;
+      color: #333333;
+      line-height: 28rpx;
+      margin-bottom: 38rpx;
+      text-align: center;
+}
+.usermiddle-box .callphone .callphone-but-box {
+      width: 100%;
+      height: 58rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.usermiddle-box .callphone .callphone-but-box view {
+        font-size: 28rpx;
+        font-family: SimHei;
+        color: white;
+        line-height: 58rpx;
+        text-align: center;
+}
+.usermiddle-box .callphone .callphone-but-box .callphone-left-but {
+        width: 180rpx;
+        height: 58rpx;
+        background: #038577;
+}
+.usermiddle-box .callphone .callphone-but-box .callphone-right-but {
+        width: 180rpx;
+        height: 58rpx;
+        background: #999999;
+}
 

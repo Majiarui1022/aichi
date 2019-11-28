@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.user-info-box {
+  width: 100%;
+  height: 100%;
+  background: #F9F9F9;
+  /*弹出层*/
+}
+.user-info-box .user-info-list {
+    width: 100%;
+    padding-left: 20rpx;
+    background: #FFFFFF;
+}
+.user-info-box .user-info-list ._ul {
+      width: 100%;
+}
+.user-info-box .user-info-list ._ul ._li {
+        width: 100%;
+        padding: 23rpx 30rpx 23rpx 0;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        border-bottom: 1rpx solid #D8D8D8;
+}
+.user-info-box .user-info-list ._ul ._li .userinfo-list-name {
+          font-size: 28rpx;
+          font-family: SimHei;
+          color: #333333;
+}
+.user-info-box .user-info-list ._ul ._li .userinfo-right {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.user-info-box .user-info-list ._ul ._li .userinfo-right .user-header-image {
+            width: 140rpx;
+            height: 140rpx;
+            border-radius: 50%;
+}
+.user-info-box .user-info-list ._ul ._li .userinfo-right .right-img {
+            width: 18rpx;
+            height: 35rpx;
+            margin-left: 22rpx;
+}
+.user-info-box .user-info-list ._ul ._li .userinfo-right .userinfo-right-con {
+            font-size: 28rpx;
+            font-family: SimHei;
+            color: #7d7d7d;
+}
+.user-info-box .user-info-list ._ul ._li:first-child {
+          padding: 30rpx 30rpx 30rpx 0;
+}
+.user-info-box .user-info-list ._ul ._li:last-child {
+          border: 0;
+}
+.user-info-box .uni-popup__wrapper.uni-custom .uni-popup__wrapper-box {
+    padding: 0;
+}
+.user-info-box .piker-box {
+    width: 100%;
+    height: 312rpx;
+    background: #ECECEC;
+    border-radius: 15px 15px 0px 0px;
+}
+.user-info-box .piker-box .piker-content {
+      width: 100%;
+      height: 100%;
+      background: #ECECEC;
+}
+.user-info-box .piker-box .piker-content .select-photo-box {
+        width: 100%;
+        height: 196rpx;
+        background: #FFFFFF;
+}
+.user-info-box .piker-box .piker-content .select-photo-box ._ul {
+          width: 100%;
+}
+.user-info-box .piker-box .piker-content .select-photo-box ._ul ._li {
+            width: 100%;
+            height: 98rpx;
+            border-bottom: 1rpx solid #ECECEC;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            text-align: center;
+            font-size: 28rpx;
+            color: #333333;
+            line-height: 98rpx;
+}
+.user-info-box .piker-box .piker-content .close-piker {
+        width: 100%;
+        height: 96rpx;
+        background: #FFFFFF;
+        text-align: center;
+        font-size: 28rpx;
+        color: #333333;
+        line-height: 96rpx;
+        margin-top: 20rpx;
+}
+

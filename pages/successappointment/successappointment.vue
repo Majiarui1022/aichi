@@ -3,9 +3,9 @@
 		<view class="successappointment-pad">
 			<image src="../../static/sj.png" class="success-successappointment-pad-image"></image>
 			<text class="success-tit">预约成功</text>
-			<text class="succss-num">预约编号：xxx500</text>
-			<text class="success-content-row">即刻起您预约的电瓶将为您保留30分钟</text>
-			<text class="success-content-row">若30分钟内未取电，预约自动取消（每天可预约三次）</text>
+			<text class="succss-num">预约编号：{{ordernumber}}</text>
+			<text class="success-content-row">即刻起您预约的电瓶将为您保留{{yuyuenumber}}分钟</text>
+			<text class="success-content-row">若{{yuyuenumber}}分钟内未取电，预约自动取消</text>
 			<view class="success-back" @click="goindex">返回</view>
 		</view>
 	</view>
@@ -15,15 +15,21 @@
 	export default {
 		data() {
 			return {
-				
+				ordernumber:uni.getStorageSync('storage_number'),
+				yuyuenumber:uni.getStorageSync('storage_name')
 			}
+		},
+		onShow() {
 		},
 		methods: {
 			goindex(){
-				uni.navigateTo({
+				uni.reLaunch({
 				    url: '../index/index'
 				});
-			}
+			},
+		},
+		mounted() {
+			
 		}
 	}
 </script>

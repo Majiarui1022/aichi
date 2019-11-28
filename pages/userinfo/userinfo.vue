@@ -5,21 +5,21 @@
 				<li @click="openPopup">
 					<view class="userinfo-list-name">头像</view>
 					<view class="userinfo-right">
-						<image class="user-header-image" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3343968209,3672130651&fm=26&gp=0.jpg" mode=""></image>
+						<image class="user-header-image" :src="headerImg" mode=""></image>
 						<image src="../../static/right.png" mode="" class="right-img"></image>
 					</view>
 				</li>
 				<li @click="changename">
 					<view class="userinfo-list-name">昵称</view>
 					<view class="userinfo-right">
-						<view class="userinfo-right-con">13845785678</view>
+						<view class="userinfo-right-con">{{username}}</view>
 						<image src="../../static/right.png" mode="" class="right-img"></image>
 					</view>
 				</li>
 				<li @click="changepohone">
 					<view class="userinfo-list-name">手机号</view>
 					<view class="userinfo-right">
-						<view class="userinfo-right-con">13845785678</view>
+						<view class="userinfo-right-con">{{usermobile}}</view>
 						<image src="../../static/right.png" mode="" class="right-img"></image>
 					</view>
 				</li>
@@ -48,19 +48,53 @@
 	  components: {uniPopup},
 		data() {
 			return {
-				
+				headerImg : uni.getStorageSync('storage_user').head_img_url,
+				username : uni.getStorageSync('storage_user').nickname,
+				usermobile:uni.getStorageSync('storage_user').mobile
 				
 			}
 		},
+		onShow(){
+			setTimeout(()=>{
+				this.username = uni.getStorageSync('storage_user').nickname
+				this.usermobile = uni.getStorageSync('storage_user').mobile 
+				console.log(this.usermobile)
+				console.log(uni.getStorageSync('storage_user').mobile )
+			},500)
+			
+		},
 		methods: {
 			selectphoto(val){
+				var _that = this
+				console.log(_that.headerImg)
 				this.closePopup()
 				uni.chooseImage({
 				    count: 1, //默认9
 				    sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
 				    sourceType: [val], //从相册选择
 				    success: function (res) {
-				        console.log(JSON.stringify(res.tempFilePaths));
+				        console.log(res.tempFilePaths);
+				        console.log(res.tempFiles[0]);
+						
+						
+						uni.uploadFile({
+						    url: 'http://10.102.100.120:8000/users/head/', //仅为示例，非真实的接口地址
+						    filePath: res.tempFilePaths[0],
+						    name: 'head_img_url',
+							header:{
+								"content-type" : "multipart/form-data",
+								'Authorization': uni.getStorageSync('storage_user').token ? 'JWT ' + uni.getStorageSync('storage_user').token : '' 
+							},
+						    success: (uploadFileRes) => {
+								let storeobj = uni.getStorageSync('storage_user')
+								storeobj.head_img_url =  JSON.parse(uploadFileRes.data).head_img_url
+								_that.headerImg = JSON.parse(uploadFileRes.data).head_img_url
+								console.log(_that.headerImg)
+								uni.setStorageSync('storage_user',storeobj);
+						    }
+						});
+						
+						
 				    }
 				});
 			},
@@ -91,6 +125,12 @@
 			closePopup(){
 				this.$refs.popup.close()
 			}
+		},
+		computed:{
+			
+		},
+		watch:{
+			
 		}
 	}
 </script>

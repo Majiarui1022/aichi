@@ -1,0 +1,316 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.map-box {
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: relative;
+}
+.map-box .search-box {
+    width: calc(100% - 20rpx);
+    height: 72rpx;
+    background: white;
+    -webkit-box-shadow: 0px 0px 2rpx 0px rgba(213, 218, 227, 0.5);
+            box-shadow: 0px 0px 2rpx 0px rgba(213, 218, 227, 0.5);
+    position: absolute;
+    left: 10rpx;
+    top: 16rpx;
+    border-radius: 20rpx;
+    z-index: 999;
+    font-size: 26rpx;
+    font-family: SimHei;
+    padding-left: 16rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #bbbbbb;
+}
+.map-box .search-box image {
+      width: 33rpx;
+      height: 33rpx;
+      margin-right: 16rpx;
+}
+.map-box .search-box text {
+      line-height: 72rpx;
+}
+.map-box .count-down-box {
+    display: none !important;
+    width: calc(100% - 20rpx);
+    height: 100rpx;
+    background: white;
+    -webkit-box-shadow: 2rpx 2rpx 2rpx 1rpx rgba(0, 0, 0, 0.16);
+            box-shadow: 2rpx 2rpx 2rpx 1rpx rgba(0, 0, 0, 0.16);
+    border-radius: 20rpx;
+    position: absolute;
+    left: 10rpx;
+    z-index: 999;
+    top: 16rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 18rpx 32rpx 18rpx 26rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.map-box .count-down-box .count-down-menu .row-one {
+      font-size: 30rpx;
+      color: #333333;
+      line-height: 30rpx;
+      margin-bottom: 12rpx;
+}
+.map-box .count-down-box .count-down-menu .row-one ._span {
+        color: #038577;
+}
+.map-box .count-down-box .count-down-menu .row-two {
+      font-size: 26rpx;
+      color: #999999;
+      line-height: 26rpx;
+}
+.map-box .count-down-box .count-down-but {
+      width: 100rpx;
+      height: 46rpx;
+      background: #038577;
+      border-radius: 23rpx;
+      font-size: 26rpx;
+      color: white;
+      line-height: 46rpx;
+      text-align: center;
+}
+.map-box .but {
+    width: 400rpx;
+    height: 100rpx;
+    border-radius: 16rpx;
+    position: absolute;
+    left: calc(50% - 200rpx);
+    bottom: 60rpx;
+    z-index: 999;
+}
+.map-box .but .dian-wu {
+      border-radius: 16rpx;
+      width: 100%;
+      height: 100%;
+      display: none;
+      background: #646464;
+}
+.map-box .but .dian-wu .nopro {
+        font-size: 28rpx;
+        color: white;
+        line-height: 100rpx;
+        text-align: center;
+}
+.map-box .but .give-dian {
+      border-radius: 16rpx;
+      width: 100%;
+      height: 100%;
+      background: #038577;
+      padding: 18rpx 0 18rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+              align-content: center;
+}
+.map-box .but .give-dian .code-image {
+        width: 62rpx;
+        height: 64rpx;
+        margin-right: 30rpx;
+}
+.map-box .but .give-dian text {
+        font-size: 36rpx;
+        font-weight: bold;
+        color: white;
+}
+.map-box .back {
+    position: fixed;
+    right: 30rpx;
+    bottom: 243rpx;
+    width: 72rpx;
+    height: 72rpx;
+    background: white;
+    -webkit-box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.2);
+    border-radius: 2rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.map-box .back image {
+      width: 44rpx;
+      height: 45rpx;
+}
+.map-box .serviceicn {
+    bottom: 343rpx;
+}
+.map-box .indexhomeicn {
+    right: 648rpx;
+    bottom: 243rpx;
+}
+.map-box .isme {
+    display: block;
+    position: fixed;
+    width: 24rpx;
+    height: 44rpx;
+    top: 50%;
+    left: 50%;
+    margin-left: -10rpx;
+    margin-top: -44rpx;
+}
+.map-box .uni-tip {
+    width: 540rpx;
+    height: 281rpx;
+    background: #f7f7f7;
+    border-radius: 15rpx;
+    padding-top: 37rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.map-box .uni-tip .uni-tip-title {
+      font-size: 34rpx;
+      font-family: SimHei;
+      color: black;
+      text-align: center;
+      line-height: 64rpx;
+}
+.map-box .uni-tip .uni-tip-content {
+      font-size: 26rpx;
+      font-family: SimHei;
+      color: black;
+      line-height: 56rpx;
+      margin-bottom: 35rpx;
+      text-align: center;
+}
+.map-box .uni-tip .uni-tip-group-button {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      border-top: 2rpx solid #09141F;
+      position: absolute;
+      bottom: 0;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+}
+.map-box .uni-tip .uni-tip-group-button .uni-tip-button {
+        width: 50%;
+        height: 88rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        border-right: 2rpx solid #09141F;
+        font-size: 34rpx;
+        font-family: SimHei;
+        color: #007AFF;
+        line-height: 88rpx;
+        text-align: center;
+}
+.map-box .uni-tip .uni-tip-group-button .uni-tip-button:last-child {
+          border: 0;
+          color: #FF002A;
+}
+.map-box .callphone {
+    width: 559rpx;
+    height: 269rpx;
+    background: white;
+    padding: 0 50rpx 36rpx 50rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.map-box .callphone .callphone-tit {
+      font-size: 32rpx;
+      font-family: SimHei;
+      color: #333333;
+      line-height: 114rpx;
+      text-align: center;
+      text-align: center;
+}
+.map-box .callphone .callphone-content {
+      font-size: 24rpx;
+      font-family: FZLanTingHeiS-R-GB;
+      color: #666666;
+      line-height: 24rpx;
+      margin-bottom: 38rpx;
+      text-align: center;
+}
+.map-box .callphone .callphone-but-box {
+      width: 100%;
+      height: 58rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.map-box .callphone .callphone-but-box view {
+        font-size: 28rpx;
+        font-family: SimHei;
+        color: white;
+        line-height: 58rpx;
+        text-align: center;
+}
+.map-box .callphone .callphone-but-box .callphone-left-but {
+        width: 180rpx;
+        height: 58rpx;
+        background: #038577;
+}
+.map-box .callphone .callphone-but-box .callphone-right-but {
+        width: 180rpx;
+        height: 58rpx;
+        background: #999999;
+}
+

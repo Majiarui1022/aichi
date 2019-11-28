@@ -29,5 +29,6 @@
       "desc": "需要根据用户当前位置来搜索附近的充电桩"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap45.json"
 }

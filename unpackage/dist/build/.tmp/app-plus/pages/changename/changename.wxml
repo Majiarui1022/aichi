@@ -1,0 +1,1 @@
+<view class="change-name"><view class="white-name"><input class="uni-input" placeholder="请输入昵称" data-event-opts="{{[['input',[['onKeyInput',['$event']]]]]}}" bindinput="__e"/></view><view data-event-opts="{{[['tap',[['SendName',['$event']]]]]}}" class="change-but" bindtap="__e">保存</view></view>

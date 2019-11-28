@@ -20,40 +20,101 @@
 				</view>
 				</view>
 			<view class="change-white-photo">
-			   <input class="uni-input" type="text"/>
+			   <input class="uni-input" type="text" v-model="usercode" />
 			</view>
-			<view class="change-commit-data">提交</view>
+			<view class="change-commit-data" @click="initmobile">提交</view>
 		</view>
+		
+		
+		
+		<!-- 验证码错误 -->
+		<uni-popup :show="authentication" :type="type" :custom="true" :mask-click="false">
+			<view class="uni-tip uni-tip-two">
+				<view class="uni-tip-content">{{errortit}}</view>
+				<view class="uni-tip-group-button">
+					<view class="uni-tip-button" @click="authentication = false">确定</view>
+				</view>
+			</view>
+		</uni-popup>
+		
+	
 	</view>
 </template>
 
 <script>
+	import requireurl from '../../requist/requist.js'
+	import uniPopup from "../../components/uni-popup/uni-popup.vue"
+	
 	export default {
+	  components: {uniPopup},
 		data() {
 			return {
-				timeout:10,
+				timeout:60,
 				showgetcode:0,
 				timer:null,
 				oldphone:'',
-				newsphone:''
+				newsphone:'',
+				usercode:'',
+				authentication:false,
+				type:'center',
+				errortit:'',
 			}
 		},
 		methods: {
+			
+			//修改手机号获取验证码
 			getcode(){
-				this.showgetcode = 1
-				this.timer = setInterval(()=>{
-					this.timeout--;
-					if(this.timeout <= 0){
-						clearInterval(this.timer)
-						this.showgetcode = 2
-						this.timeout = 10
-					}
-				},1000)
+				var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+				if(!myreg.test(this.newsphone) || this.newsphone.length < 11){
+					return false
+				}
+				let data = {
+					mobile:this.newsphone
+				}
+				requireurl.request('/users/codes/',data,this.getcodesuccess,this.file)
+			},
+			//获取验证码回调
+			getcodesuccess(e){
+				if(e.statusCode === 200){
+					this.showgetcode = 1
+					this.timer = setInterval(()=>{
+						this.timeout--;
+						if(this.timeout <= 0){
+							clearInterval(this.timer)
+							this.showgetcode = 2
+							this.timeout = 59
+						}
+					},1000)
+				}
+			},
+			
+			//修改手机号提交
+			initmobile(){
+				let data = {
+					mobile:this.newsphone,
+					code:this.usercode
+				}
+				requireurl.getPutData('/users/mobile/',data,this.changemobile,this.file)
+			},
+			//修改手机号回调
+			changemobile(e){
+				if(e.statusCode === 200){
+					let storeobj = uni.getStorageSync('storage_user')
+					storeobj.mobile = this.newsphone
+					storeobj.token = e.data.token
+					uni.setStorageSync('storage_user',storeobj);
+					uni.navigateBack({
+					    delta:1
+					});
+				}else{
+					this.errortit = e.data.err
+					this.authentication = true
+				}
 			}
 		},
 		destroyed() {
 			if(this.timer){
-						clearInterval(this.timer)
+				clearInterval(this.timer)
 			}
 		}
 	}
@@ -112,6 +173,38 @@
 				margin-top: 75rpx;
 				&:active{
 					background: #049d8c;
+				}
+			}
+		}
+		
+		//验证码错误提示
+		.uni-tip-two{
+			height:218rpx;
+			width:519rpx;
+			background:rgba(247,247,247,1);
+			border-radius: 5rpx;
+			.uni-tip-content{
+				width:100%;
+				height: 128rpx;
+				font-size:30rpx;
+				color:rgba(0,0,0,1);
+				line-height:128rpx;
+				text-align: center;
+				border-bottom: 1rpx solid #000;
+				box-sizing: border-box;
+			}
+			.uni-tip-group-button{
+				width:100%;
+				height: 90rpx;
+				border: 0;
+				height: 90rpx;
+				.uni-tip-button{
+					width: 100%;
+					height: 90rpx;
+					text-align: center;
+					line-height: 90rpx;
+					font-size:36rpx;
+					font-family:SimHei; 
 				}
 			}
 		}
